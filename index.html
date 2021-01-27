@@ -30,47 +30,65 @@
             </section>
             <!-- end profile -->
 
+            <!-- start popup -->
+            <div class="popup popup_opened popup_closed">
+                <div class="popup__container">
+                    <span class="popup__close">&#10005;</span>
+                    <form action="index.html" method="post" class="popup__form">
+                        <h2 class="popup__title">Редактировать профиль</h2>
+                            <input type="text" class="popup__input-text input_text_type_name" value="Жак-Ив Кусто">
+                            <input type="text" class="popup__input-text input_text_type_job" value="Исследователь океана">
+                        <button class="popup__button form__submit-btn_action_add">Сохранить</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- end popup -->
+
             <!-- start pictures -->
             <section class="pictures">
                 <article class="cards">
                     <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="" class="cards__image">
                     <p class="cards__subtitle">Карачаевск</p>
-                    <button class="cards__heart">&#9825;</button>
+                    <button class="cards__heart"></button>
                 </article>
                 <article class="cards">
                     <img src="./images/kirill-pershin-1404681-unsplash.png" alt="" class="cards__image">
                     <p class="cards__subtitle">Гора Эльбрус</p>
-                    <button class="cards__heart">&#9825;</button>
+                    <button class="cards__heart"></button>
                 </article>
                 <article class="cards">
                     <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="" class="cards__image">
                     <p class="cards__subtitle">Домбай</p>
-                    <button class="cards__heart">&#9825;</button>
+                    <button class="cards__heart"></button>
                 </article>
                 <article class="cards">
                     <img src="./images/Байкал_лёд-9.jpg" alt="" class="cards__image">
                     <p class="cards__subtitle">Байкал</p>
-                    <button class="cards__heart">&#9825;</button>
+                    <button class="cards__heart"></button>
                 </article>
                 <article class="cards">
                     <img src="./images/teletskoe_ozero_02.jpg" alt="" class="cards__image">
-                    <p class="cards__subtitle">Тедеское озеро</p>
-                    <button class="cards__heart">&#9825;</button>
+                    <p class="cards__subtitle">Телецкое озеро</p>
+                    <button class="cards__heart"></button>
                 </article>
                 <article class="cards">
                     <img src="./images/_И.В. Вулкан Вилючинский_1.jpg" alt="" class="cards__image">
                     <p class="cards__subtitle">Камчатка</p>
-                    <button class="cards__heart">&#9825;</button>
+                    <button class="cards__heart"></button>
                 </article>
             </section>
             <!-- end pictures -->
         </main>
+        <!-- start footer -->
         <footer class="footer page__footer">
             <p class="footer__copyright">
                 &copy; 2020 Mesto Russia
             </p>
         </footer>
+        <!-- end footer -->
     </div>
+    <script src="./script.js"></script>
 </body>
 
 </html>
