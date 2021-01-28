@@ -18,28 +18,22 @@ let whiteHeart = document.querySelectorAll('.cards__heart');
 let blackHeart = document.querySelectorAll('.cards__heart_type_active');
 
 function likeHeart() {
-    
+
 }
 
-// Находим форму в DOM
+
 let formElement = document.querySelector('.popup__form');
 let nameInput = document.querySelector('.input_text_type_name');
 let jobInput = document.querySelector('.input_text_type_job');
+let profileNmae = document.querySelector('.profile__name');
+let profileJob = document.querySelector('.profile__subtitle');
 
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
 function formSubmitHandler(evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    // Так мы можем определить свою логику отправки.
-    // О том, как это делать, расскажем позже.
+    evt.preventDefault();
 
-    // Получите значение полей jobInput и nameInput из свойства value
+    profileNmae.textContent = nameInput.value;
+    profileJob.textContent = jobInput.value;
 
-    // Выберите элементы, куда должны быть вставлены значения полей
-
-    // Вставьте новые значения с помощью textContent
 }
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler);
