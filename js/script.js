@@ -15,8 +15,8 @@ function closePop() {
 }
 
 let formElement = document.querySelector('.popup__form');
-let nameInput = document.querySelector('.input_text_type_name');
-let jobInput = document.querySelector('.input_text_type_job');
+let nameInput = document.querySelector('.popup__input-text_type_name');
+let jobInput = document.querySelector('.popup__input-text_type_job');
 let profileNmae = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__subtitle');
 
