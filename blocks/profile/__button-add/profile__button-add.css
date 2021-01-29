@@ -18,6 +18,11 @@
     opacity: 0.6;
 }
 
+@media all and (max-width: 735px) {
+    .profile__button-add {
+        width: 100px;
+    }
+}
 @media all and (max-width: 682px) {
     .profile__button-add {
         width: 282px;
