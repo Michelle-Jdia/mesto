@@ -100,6 +100,10 @@
     line-height: 1.14;
     color: #FFFFFF;
     margin: 0 0 16px;
+    max-width: 294px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .profile__subtitle {
@@ -107,6 +111,10 @@
     line-height: 1.2;
     color: #FFFFFF;
     margin: 0;
+    max-width: 282px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .profile__avatar {
@@ -129,6 +137,9 @@
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
     box-sizing: border-box;
+    display: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .popup__close {
@@ -157,26 +168,24 @@
 }
 
 .popup__container {
-    width: 430px;
+    position: relative;
+    margin: 6% auto 0;
+    max-width: 430px;
     height: 330px;
     background-color: #FFFFFF;
-    position: fixed;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    box-sizing: border-box;
-    text-align: center;
 }
 
 .popup__title {
     color: #000000;
     font-size: 24px;
     line-height: 1.2;
-    margin: 34px 0 44px;
+    padding: 34px 0 44px;
     font-weight: 900;
     text-align: left;
+    width: 95%;
+    margin: 0;
 }
 
 .popup__input-text {
@@ -185,7 +194,7 @@
     color: #000000;
     margin: 0 0 30px;
     padding: 5px 0 13px;
-    width: 358px;
+    width: 90%;
     outline: none;
     font-size: 14px;
     line-height: 1.2;
@@ -204,7 +213,7 @@
     color: #FFFFFF;
     font-size: 18px;
     line-height: 1.2;
-    width: 358px;
+    width: 95%;
     height: 50px;
     text-align: center;
     background: #000000;
@@ -237,10 +246,6 @@
     background-color: rgba(255, 255, 255, 1);
     border-radius: 11px;
     position: relative;
-    box-sizing: border-box;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 .cards__image {
@@ -250,12 +255,16 @@
     object-fit: cover;
 }
 
-.cards__subtitle {
+.cards__title {
     color: rgba(0, 0, 0, 1);
     font-weight: 900;
     font-size: 24px;
     line-height: 1.2;
     margin: 25px 0 0 21px;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cards__heart {
@@ -356,5 +365,22 @@
 
     .page__footer {
         margin: 48px auto 36px;
+    }
+    .popup__container {
+        width: 282px;
+        height: 322px;
+    }
+    .popup__title {
+
+        font-size: 18px;
+
+    }
+    .popup__close {
+        font-size: 28px;
+        top: -35px;
+        right: 10px;
+    }
+    .popup__button {
+        font-size: 14px;
     }
 }

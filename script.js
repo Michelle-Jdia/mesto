@@ -5,7 +5,7 @@ let closePopup = document.querySelector('.popup__close');
 editBut.addEventListener('click', openPop);
 
 function openPop() {
-    openPopup.setAttribute('style', 'display: block;');
+    openPopup.setAttribute('style', 'display: flex;');
 }
 
 closePopup.addEventListener('click', closePop);
@@ -13,14 +13,6 @@ closePopup.addEventListener('click', closePop);
 function closePop() {
     openPopup.setAttribute('style', 'display: none;');
 }
-
-let whiteHeart = document.querySelectorAll('.cards__heart');
-let blackHeart = document.querySelectorAll('.cards__heart_type_active');
-
-function likeHeart() {
-
-}
-
 
 let formElement = document.querySelector('.popup__form');
 let nameInput = document.querySelector('.input_text_type_name');
@@ -37,3 +29,4 @@ function formSubmitHandler(evt) {
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
+formElement.addEventListener('submit', closePop);
