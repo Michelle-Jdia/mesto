@@ -1,0 +1,17 @@
+.page__footer {
+    max-width: 880px;
+    margin: 98px auto 60px;
+}
+
+@media all and (max-width: 900px) {
+    .page__footer {
+        max-width: 80%;
+    }
+}
+
+@media all and (max-width: 682px) {
+
+    .page__footer {
+        margin: 48px auto 36px;
+    }
+}

@@ -1,0 +1,9 @@
+.page__header {
+    max-width: 880px;
+    margin: 0 auto;
+}
+@media all and (max-width: 900px) {
+    .page__header {
+        max-width: 100%;
+    }
+}

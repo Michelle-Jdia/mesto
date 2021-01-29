@@ -1,0 +1,26 @@
+.popup__close {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    transform: rotate(-90deg);
+    top: -32px;
+    right: -28px;
+    text-align: center;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.popup__close:hover {
+    transition: opacity ease-in-out 0.4s;
+    opacity: 0.8;
+}
+
+@media all and (max-width: 682px) {
+    .popup__close {
+        font-size: 28px;
+        top: -35px;
+        right: 10px;
+    }
+}
