@@ -1,0 +1,21 @@
+.cards__heart {
+    border: none;
+    background: url(https://code.s3.yandex.net/web-code/dom/heart.svg) center no-repeat;
+    background-size: 100%;
+    font-size: 29px;
+    outline: none;
+    width: 22px;
+    height: 19px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.cards__heart:hover {
+    transition: opacity ease-in-out 0.4s;
+    opacity: 0.6;
+}
+
+.cards__heart:active {
+    opacity: 1;
+    background: url(https://code.s3.yandex.net/web-code/dom/heart-filled.svg) center no-repeat;
+}
