@@ -1,13 +1,14 @@
 .profile__container-info {
     max-width: 330px;
     margin-left: 30px;
-    margin-right: auto;
-    position: relative;
+    margin-right: 18px;
+  
 }
 
-@media all and (max-width: 682px) {
+@media all and (max-width: 742px) {
 
     .profile__container-info {
         margin: 22px 0 36px;
+        text-align: center;
     }
 }

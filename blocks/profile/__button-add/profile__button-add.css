@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin: 0 0 0 auto;
     padding: 0;
     cursor: pointer;
     border-radius: 2px;
@@ -18,12 +18,10 @@
     opacity: 0.6;
 }
 
-@media all and (max-width: 735px) {
+@media all and (max-width: 742px) {
     .profile__button-add {
-        width: 100px;
+          margin: 0;
     }
-}
-@media all and (max-width: 682px) {
     .profile__button-add {
         width: 282px;
     }
