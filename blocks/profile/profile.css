@@ -1,10 +1,10 @@
 .profile {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
-@media all and (max-width: 682px) {
+@media all and (max-width: 742px) {
 
     .profile {
         flex-direction: column;
