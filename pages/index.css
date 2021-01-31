@@ -38,6 +38,7 @@
 @import url('../blocks/cards/__title/cards__title.css');
 @import url('../blocks/cards/__image/cards__image.css');
 @import url('../blocks/cards/__heart/cards__heart.css');
+@import url('../blocks/cards/__info/cards__info.css');
 /* end cards */
 
 /* start footer */
