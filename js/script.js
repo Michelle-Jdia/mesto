@@ -1,5 +1,5 @@
 let editBut = document.querySelector('.profile__button-edit');
-let openPopup = document.querySelector('.popup_opened');
+let openPopup = document.querySelector('.popup__opened');
 let closePopup = document.querySelector('.popup__close');
 
 editBut.addEventListener('click', openPop);
@@ -25,8 +25,7 @@ function formSubmitHandler(evt) {
 
     profileNmae.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-
+    closePop();
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
-formElement.addEventListener('submit', closePop);

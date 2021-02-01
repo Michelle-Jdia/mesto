@@ -14,7 +14,3 @@
 .popup__input-text:last-of-type {
     margin-bottom: 0;
 }
-
-.popup__input-text:focus {
-    border: rgba(85, 85, 245, 0.767) 3px solid;
-}
