@@ -2,10 +2,10 @@
     color: #000000;
     font-size: 24px;
     line-height: 1.2;
-    padding: 34px 0 44px;
+    padding: 34px 0 54px;
     font-weight: 900;
     text-align: left;
-    width: 95%;
+max-width: 100%;
     margin: 0;
 }
 

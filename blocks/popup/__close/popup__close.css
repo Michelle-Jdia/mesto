@@ -1,15 +1,17 @@
 .popup__close {
+    background-color: initial;
+    border: 0;
+    width: 40px;
+    height: 40px;
     position: absolute;
-    margin: 0;
     padding: 0;
-    color: #FFFFFF;
-    font-weight: bold;
-    transform: rotate(-90deg);
-    top: -32px;
-    right: -28px;
-    text-align: center;
-    font-size: 35px;
+    top: -41px;
+    right: -37px;
     cursor: pointer;
+    background-image: url('/images/CloseIcon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
 }
 
 .popup__close:hover {
@@ -19,8 +21,9 @@
 
 @media all and (max-width: 682px) {
     .popup__close {
-        font-size: 28px;
-        top: -35px;
+        top: -45px;
         right: 10px;
+        width: 26px;
+        height: 26px;
     }
 }

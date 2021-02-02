@@ -3,14 +3,23 @@
     height: 50px;
     background-color: black;
     color: #FFFFFF;
+<<<<<<< HEAD
     font-size: 28px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 0 0 auto;
     padding: 0;
+=======
+    margin: 0 0 0 auto;
+>>>>>>> main
     cursor: pointer;
+    border: 2px solid #FFFFFF;
     border-radius: 2px;
+    background-image: url('/images/plus.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
 }
 
 .profile__button-add:hover {
