@@ -3,16 +3,7 @@
     height: 50px;
     background-color: black;
     color: #FFFFFF;
-<<<<<<< HEAD
-    font-size: 28px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0 0 0 auto;
-    padding: 0;
-=======
-    margin: 0 0 0 auto;
->>>>>>> main
     cursor: pointer;
     border: 2px solid #FFFFFF;
     border-radius: 2px;
@@ -32,3 +23,4 @@
         margin: 0;
         width: 282px;
     }
+}

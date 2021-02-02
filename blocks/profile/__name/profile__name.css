@@ -6,12 +6,11 @@
     margin: 0 0 16px;
     max-width: 294px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> main
 @media all and (max-width: 742px) {
 
     .profile__name {
