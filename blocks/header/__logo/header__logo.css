@@ -8,3 +8,11 @@
         margin-left: 27px;
     }
 }
+@media all and (max-width: 742px) {
+    .header__logo {
+        width: 103px;
+        height: 24px;
+        margin-top: 28px;
+        margin-bottom: 31px;
+    }
+}
