@@ -38,6 +38,7 @@
                     <div class="cards__info">
                         <h2 class="cards__title">Карачаево-Черкессия</h2>
                         <button class="cards__heart" type="button"></button>
+                        <button class="cards__bin" type="button"></button>
                     </div>
                 </article>
                 <article class="cards">
@@ -45,6 +46,7 @@
                     <div class="cards__info">
                         <h2 class="cards__title">Гора Эльбрус</h2>
                         <button class="cards__heart" type="button"></button>
+                        <button class="cards__bin" type="button"></button>
                     </div>
                 </article>
                 <article class="cards">
@@ -52,6 +54,7 @@
                     <div class="cards__info">
                         <h2 class="cards__title">Домбай</h2>
                         <button class="cards__heart" type="button"></button>
+                        <button class="cards__bin" type="button"></button>
                     </div>
                 </article>
                 <article class="cards">
@@ -59,6 +62,7 @@
                     <div class="cards__info">
                         <h2 class="cards__title">Байкал</h2>
                         <button class="cards__heart" type="button"></button>
+                        <button class="cards__bin" type="button"></button>
                     </div>
                 </article>
                 <article class="cards">
@@ -66,6 +70,7 @@
                     <div class="cards__info">
                         <h2 class="cards__title">Телецкое озеро</h2>
                         <button class="cards__heart" type="button"></button>
+                        <button class="cards__bin" type="button"></button>
                     </div>
                 </article>
                 <article class="cards">
@@ -73,6 +78,7 @@
                     <div class="cards__info">
                         <h2 class="cards__title">Камчатка</h2>
                         <button class="cards__heart" type="button"></button>
+                        <button class="cards__bin" type="button"></button>
                     </div>
                 </article>
             </section>
@@ -102,6 +108,21 @@
         </div>
 
         <!-- end popup -->
+        <!-- start popup-creat -->
+        <div class="popup-creat">
+            <div class="popup-creat__container">
+                <button class="popup-creat__close" type="button"></button>
+                <form action="index.html" method="post" class="popup-creat__form" name="form">
+                    <h2 class="popup-creat__title">Новое место</h2>
+                    <input type="text" class="popup-creat__input-text popup__input-text_type_place-name" value=""
+                        name="name-input" placeholder="Название">
+                    <input type="text" class="popup-creat__input-text popup__input-text_type_place-link" value=""
+                        name="job-input" placeholder="Ссылка на картинку">
+                    <button class="popup-creat__button" type="submit" for="form">Создать</button>
+                </form>
+            </div>
+        </div>
+        <!-- end popup-creat -->
     </div>
     <script src="./js/script.js"></script>
 </body>

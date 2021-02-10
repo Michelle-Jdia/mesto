@@ -1,0 +1,19 @@
+.cards__bin {
+    background-color: initial;
+    border: 0;
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    padding: 0;
+    top: 18px;
+    right: 15px;
+    cursor: pointer;
+    background-image: url('/images/bin.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+}
+.cards__bin:hover {
+    transition: opacity ease-in-out 0.4s;
+    opacity: 0.6;
+}
