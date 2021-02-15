@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css">
+    <script src="./js/script.js" defer></script>
 </head>
 
 <body class="body">
@@ -32,16 +33,18 @@
 
             <!-- start pictures -->
             <section class="pictures">
-                <article class="cards">
-                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="старый храм среди холмов"
-                        class="cards__image">
-                    <div class="cards__info">
-                        <h2 class="cards__title">Карачаево-Черкессия</h2>
-                        <button class="cards__heart" type="button"></button>
-                        <button class="cards__bin" type="button"></button>
-                    </div>
-                </article>
-                <article class="cards">
+                <template class="template">
+                    <article class="cards template__element">
+                        <img src="" alt=""
+                            class="cards__image">
+                        <div class="cards__info">
+                            <h2 class="cards__title"></h2>
+                            <button class="cards__heart" type="button"></button>
+                            <button class="cards__bin" type="button"></button>
+                        </div>
+                    </article>
+                </template>
+                <!-- <article class="cards">
                     <img src="./images/kirill-pershin-1404681-unsplash.png" alt="вид вершины горы" class="cards__image">
                     <div class="cards__info">
                         <h2 class="cards__title">Гора Эльбрус</h2>
@@ -80,7 +83,7 @@
                         <button class="cards__heart" type="button"></button>
                         <button class="cards__bin" type="button"></button>
                     </div>
-                </article>
+                </article> -->
             </section>
             <!-- end pictures -->
         </main>
@@ -112,19 +115,19 @@
         <div class="popup-creat">
             <div class="popup-creat__container">
                 <button class="popup-creat__close" type="button"></button>
-                <form action="index.html" method="post" class="popup-creat__form" name="form">
+                <form action="index.html" method="post" class="popup-creat__form" name="creat-form">
                     <h2 class="popup-creat__title">Новое место</h2>
-                    <input type="text" class="popup-creat__input-text popup__input-text_type_place-name" value=""
+                    <input type="text" class="popup-creat__input-text popup-creat__input-name" value=""
                         name="name-input" placeholder="Название">
-                    <input type="text" class="popup-creat__input-text popup__input-text_type_place-link" value=""
-                        name="job-input" placeholder="Ссылка на картинку">
-                    <button class="popup-creat__button" type="submit" for="form">Создать</button>
+                    <input type="text" class="popup-creat__input-text popup-creat__input-link" value=""
+                        name="link-input" placeholder="Ссылка на картинку">
+                    <button class="popup-creat__button" type="submit" for="creat-form">Создать</button>
                 </form>
             </div>
         </div>
         <!-- end popup-creat -->
     </div>
-    <script src="./js/script.js"></script>
+
 </body>
 
 </html>
