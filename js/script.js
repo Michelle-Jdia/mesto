@@ -74,33 +74,34 @@ const initialCards = [{
 ];
 const listContainerEl = document.querySelector('.pictures');
 const templateEl = document.querySelector('.template');
-const addBtncard = document.querySelector('.profile__button-add');
 const creatCardBtn = document.querySelector('.popup-creat__button');
 const inputName = document.querySelector('.popup-creat__input-name');
 const inputLink = document.querySelector('.popup-creat__input-link');
-const input = document.querySelector('.popup-creat__input-text');
+const fallbackImage = 'https://www.froben11.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png';
 
 
 function addEl() {
     const page = initialCards.map(getItem);
 
     listContainerEl.append(...page);
+
 }
 
-function addCard() {
+function addCard(e) {
     const inputT = inputName.value;
-    const inputL = inputLink.value;
+    const inputL = inputLink.value ? inputLink.value : fallbackImage
     const listEl = getItem({
         name: inputT,
         link: inputL
     });
-    templateEl.prepend(listEl);
-    input.value = '';
 
+    inputName.value = '';
+    inputLink.value = '';
+
+    listContainerEl.append(listEl);
     closePopCreat();
+    e.preventDefault();
 }
-
-creatCardBtn.addEventListener('click', addCard);
 
 function getItem(item) {
     const newItem = templateEl.content.cloneNode(true);
@@ -111,7 +112,7 @@ function getItem(item) {
 
     const removeBtn = newItem.querySelector('.cards__bin');
     removeBtn.addEventListener('click', deleteItem);
-
+    creatCardBtn.addEventListener('click', addCard);
 
     return newItem;
 }
@@ -121,5 +122,7 @@ function deleteItem(event) {
     const targetItem = targetEl.closest('.cards');
     targetItem.remove();
 }
+creatCardBtn.addEventListener('click', addCard);
+
 
 addEl();
