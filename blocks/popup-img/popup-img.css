@@ -1,4 +1,4 @@
-.popup {
+.popup-img {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -6,19 +6,10 @@
     right: 0;
     z-index: 100;
     background-color: rgba(0, 0, 0, 0.5);
+    display: none;
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    display: none;
-    animation: fade_out_show 1s;
-    opacity: 0;
-}
-@keyframes fade_in_show {
-    0% {
-         opacity: 0;
-    }
-
-    100% {
-         opacity: 1;
-    }
+    margin: 0;
+    padding: 0;
 }

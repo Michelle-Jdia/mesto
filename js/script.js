@@ -6,6 +6,14 @@ let popUp = document.querySelector('.popup');
 let openBtn = document.querySelector('.profile__button-edit');
 let popUpCloseBtn = document.querySelector('.popup__close');
 let formElement = document.querySelector('.popup__form');
+//     Также по поводу функции открытия popupImg. Насколько я понял,
+//    у тебя получается, для каждого попапа своя отдельная функция закрытия и открытия.
+//      Так не оптимально. Нужно сделать универсальную функцию открытия и закрытия и передавать туда popup как аргумент
+//          function openPopup(popup) {
+//         popup.classList.add('popup_is-opened')
+//       }
+
+
 
 function openPop() {
     popUp.classList.add('popup__opened');
@@ -78,13 +86,17 @@ const creatCardBtn = document.querySelector('.popup-creat__button');
 const inputName = document.querySelector('.popup-creat__input-name');
 const inputLink = document.querySelector('.popup-creat__input-link');
 const fallbackImage = 'https://www.froben11.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png';
+const btnImgPop = document.querySelector('.popup-img');
+const btnImgPopClose = document.querySelector('.popup-img__close');
+const popImg = document.querySelector('.popup-img__image');
+const popImgSub = document.querySelector('.popup-img__subtitle');
+
 
 
 function addEl() {
     const page = initialCards.map(getItem);
 
     listContainerEl.append(...page);
-
 }
 
 function addCard(e) {
@@ -98,9 +110,12 @@ function addCard(e) {
     inputName.value = '';
     inputLink.value = '';
 
+
+
     listContainerEl.append(listEl);
     closePopCreat();
     e.preventDefault();
+
 }
 
 function getItem(item) {
@@ -110,11 +125,30 @@ function getItem(item) {
     addTitle.textContent = item.name;
     addImg.src = item.link;
 
+
+
+    addImg.addEventListener('click', openPopImg);
+    btnImgPopClose.addEventListener('click', closePopImg);
+
     const removeBtn = newItem.querySelector('.cards__bin');
     removeBtn.addEventListener('click', deleteItem);
+
+    const likeBtn = newItem.querySelector('.cards__heart');
+    likeBtn.addEventListener('click', likeBtnH);
+
     creatCardBtn.addEventListener('click', addCard);
 
+
     return newItem;
+}
+
+function openPopImg() {
+    btnImgPop.classList.add('popup-img__opened');
+
+}
+
+function closePopImg() {
+    btnImgPop.classList.remove('popup-img__opened');
 }
 
 function deleteItem(event) {
@@ -124,5 +158,9 @@ function deleteItem(event) {
 }
 creatCardBtn.addEventListener('click', addCard);
 
-
+function likeBtnH(eve) {
+    const targetH = eve.target;
+    const targetBtn = targetH.closest('.cards__heart');
+    targetBtn.classList.toggle('cards__heart_active');
+}
 addEl();

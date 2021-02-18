@@ -67,3 +67,12 @@
 @import url('../blocks/popup-creat/__button/popup-creat__button.css');
 @import url('../blocks/popup-creat/__opened/popup-creat__opened.css');
 /* end popup-creat */
+
+/* start popup-img */
+@import url('../blocks/popup-img/popup-img.css');
+@import url('../blocks/popup-img/__container/popup-img__container.css');
+@import url('../blocks/popup-img/__image/popup-img__image.css');
+@import url('../blocks/popup-img/__subtitle/popup-img__subtitle.css');
+@import url('../blocks/popup-img/__close/popup-img__close.css');
+@import url('../blocks/popup-img/__opened/popup-img__opened.css');
+/* end popup-img */
