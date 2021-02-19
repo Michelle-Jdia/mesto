@@ -36,9 +36,6 @@ function formSubmitHandler(evt) {
 formElement.addEventListener('submit', formSubmitHandler);
 
 let popUpCreat = document.querySelector('.popup-creat');
-let formElementCreat = document.querySelector('.popup-creat__form');
-let placeNameInput = document.querySelector('.popup-creat__input-text_type_place-name');
-let placeLinkInput = document.querySelector('.popup-creat__input-text_type_place-link');
 let popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
 let openBtnCreat = document.querySelector('.profile__button-add');
 
@@ -86,9 +83,6 @@ const inputLink = document.querySelector('.popup-creat__input-link');
 const fallbackImage = 'https://www.froben11.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png';
 const btnImgPop = document.querySelector('.popup-img');
 const btnImgPopClose = document.querySelector('.popup-img__close');
-const popImg = document.querySelector('.popup-img__image');
-const popImgSub = document.querySelector('.popup-img__subtitle');
-
 
 
 function addEl() {
@@ -109,7 +103,6 @@ function addCard(e) {
     inputLink.value = '';
 
 
-
     listContainerEl.append(listEl);
     closePopCreat();
     e.preventDefault();
@@ -124,6 +117,10 @@ function getItem(item) {
     addImg.src = item.link;
 
 
+    newItem.querySelector('.cards').addEventListener('click', function() {
+        document.querySelector('.popup-img__image').src = this.querySelector('.cards__image').src;
+        document.querySelector('.popup-img__subtitle').textContent = this.querySelector('.cards__title').textContent;
+    });
 
     addImg.addEventListener('click', openPopImg);
     btnImgPopClose.addEventListener('click', closePopImg);
@@ -142,7 +139,6 @@ function getItem(item) {
 
 function openPopImg() {
     btnImgPop.classList.add('popup-img__opened');
-
 }
 
 function closePopImg() {
