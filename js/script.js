@@ -112,10 +112,12 @@ function getItem(item) {
     const addImg = newItem.querySelector('.cards__image');
     addTitle.textContent = item.name;
     addImg.src = item.link;
+    addImg.alt = item.name;
 
 
     newItem.querySelector('.cards').addEventListener('click', function () {
         document.querySelector('.popup-img__image').src = this.querySelector('.cards__image').src;
+        document.querySelector('.popup-img__image').alt = this.querySelector('.cards__title').textContent;
         document.querySelector('.popup-img__subtitle').textContent = this.querySelector('.cards__title').textContent;
     });
 
