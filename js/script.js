@@ -1,55 +1,3 @@
-let profileNmae = document.querySelector('.profile__name');
-let profileJob = document.querySelector('.profile__subtitle');
-let nameInput = document.querySelector('.popup__input-text_type_name');
-let jobInput = document.querySelector('.popup__input-text_type_job');
-let popUp = document.querySelector('.popup');
-let openBtn = document.querySelector('.profile__button-edit');
-let popUpCloseBtn = document.querySelector('.popup__close');
-let formElement = document.querySelector('.popup__form');
-//     Также по поводу функции открытия popupImg. Насколько я понял,
-//    у тебя получается, для каждого попапа своя отдельная функция закрытия и открытия.
-//      Так не оптимально. Нужно сделать универсальную функцию открытия и закрытия и передавать туда popup как аргумент
-//          function openPopup(popup) {
-//         popup.classList.add('popup_is-opened')
-//       }
-
-
-
-function openPop() {
-    popUp.classList.add('popup__opened');
-}
-openBtn.addEventListener('click', openPop);
-
-function closePop() {
-    popUp.classList.remove('popup__opened');
-}
-popUpCloseBtn.addEventListener('click', closePop);
-
-function formSubmitHandler(evt) {
-    evt.preventDefault();
-
-    profileNmae.textContent = nameInput.value;
-    profileJob.textContent = jobInput.value;
-    closePop();
-}
-
-formElement.addEventListener('submit', formSubmitHandler);
-
-let popUpCreat = document.querySelector('.popup-creat');
-let popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
-let openBtnCreat = document.querySelector('.profile__button-add');
-
-function openCreatPop() {
-    popUpCreat.classList.add('popup-creat__opened');
-}
-openBtnCreat.addEventListener('click', openCreatPop);
-
-function closePopCreat() {
-    popUpCreat.classList.remove('popup-creat__opened');
-}
-popUpCloseBtnCreat.addEventListener('click', closePopCreat);
-
-
 const initialCards = [{
         name: 'Архыз',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -81,8 +29,57 @@ const creatCardBtn = document.querySelector('.popup-creat__button');
 const inputName = document.querySelector('.popup-creat__input-name');
 const inputLink = document.querySelector('.popup-creat__input-link');
 const fallbackImage = 'https://www.froben11.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png';
-const btnImgPop = document.querySelector('.popup-img');
+
 const btnImgPopClose = document.querySelector('.popup-img__close');
+
+let profileNmae = document.querySelector('.profile__name');
+let profileJob = document.querySelector('.profile__subtitle');
+let nameInput = document.querySelector('.popup__input-text_type_name');
+let jobInput = document.querySelector('.popup__input-text_type_job');
+
+
+
+let openBtn = document.querySelector('.profile__button-edit');
+let popUpCloseBtn = document.querySelector('.popup__close');
+let formElement = document.querySelector('.popup__form');
+
+
+let popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
+let openBtnCreat = document.querySelector('.profile__button-add');
+
+let popUpCreat = document.querySelector('.popup-creat');
+const btnImgPop = document.querySelector('.popup-img');
+let popUp = document.querySelector('.popup');
+
+function openPopup(popup) {
+    popup.classList.add('popup__opened');
+}
+function closePopup(popup) {
+    popup.classList.remove('popup__opened');
+}
+openBtn.addEventListener('click', () => {
+    openPopup(popUp);
+});
+popUpCloseBtn.addEventListener('click', () => {
+    closePopup(popUp);
+});
+
+openBtnCreat.addEventListener('click', () => {
+    openPopup(popUpCreat);
+});
+popUpCloseBtnCreat.addEventListener('click', () => {
+    closePopup(popUpCreat);
+});
+
+function formSubmitHandler(evt) {
+    evt.preventDefault();
+
+    profileNmae.textContent = nameInput.value;
+    profileJob.textContent = jobInput.value;
+    closePopup(popUp);
+}
+
+formElement.addEventListener('submit', formSubmitHandler);
 
 
 function addEl() {
@@ -104,7 +101,7 @@ function addCard(e) {
 
 
     listContainerEl.append(listEl);
-    closePopCreat();
+    closePopup(popUpCreat);
     e.preventDefault();
 
 }
@@ -117,13 +114,17 @@ function getItem(item) {
     addImg.src = item.link;
 
 
-    newItem.querySelector('.cards').addEventListener('click', function() {
+    newItem.querySelector('.cards').addEventListener('click', function () {
         document.querySelector('.popup-img__image').src = this.querySelector('.cards__image').src;
         document.querySelector('.popup-img__subtitle').textContent = this.querySelector('.cards__title').textContent;
     });
 
-    addImg.addEventListener('click', openPopImg);
-    btnImgPopClose.addEventListener('click', closePopImg);
+    addImg.addEventListener('click', () => {
+        openPopup(btnImgPop);
+    });
+    btnImgPopClose.addEventListener('click', () => {
+        closePopup(btnImgPop);
+    });
 
     const removeBtn = newItem.querySelector('.cards__bin');
     removeBtn.addEventListener('click', deleteItem);
@@ -137,13 +138,6 @@ function getItem(item) {
     return newItem;
 }
 
-function openPopImg() {
-    btnImgPop.classList.add('popup-img__opened');
-}
-
-function closePopImg() {
-    btnImgPop.classList.remove('popup-img__opened');
-}
 
 function deleteItem(event) {
     const targetEl = event.target;

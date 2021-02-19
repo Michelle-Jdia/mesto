@@ -12,6 +12,8 @@
     display: none;
     animation: fade_out_show 1s;
     opacity: 0;
+    margin: 0;
+    padding: 0;
 }
 @keyframes fade_in_show {
     0% {
