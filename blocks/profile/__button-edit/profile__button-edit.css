@@ -7,7 +7,7 @@
     cursor: pointer;
     border: 1px solid #FFFFFF;
     margin: 0 0 0 25px;
-    background-image: url('/images/pen.svg');
+    background-image: url('../../../images/pen.svg');
     background-repeat: no-repeat;
     background-position: center;
     object-fit: cover;
