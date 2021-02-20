@@ -23,40 +23,120 @@ const initialCards = [{
         link: 'https://i.pinimg.com/originals/b2/50/4d/b2504dba83db45e1dbbc1a14358a4e3b.jpg'
     }
 ];
+
+//  selectors \\
+
+// template \\
 const listContainerEl = document.querySelector('.pictures');
 const templateEl = document.querySelector('.template');
-const creatCardBtn = document.querySelector('.popup-creat__button');
-const inputName = document.querySelector('.popup-creat__input-name');
-const inputLink = document.querySelector('.popup-creat__input-link');
-const fallbackImage = 'https://www.froben11.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png';
 
-const btnImgPopClose = document.querySelector('.popup-img__close');
-
+// profile \\
 const profileNmae = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__subtitle');
+const openBtn = document.querySelector('.profile__button-edit');
+const openBtnCreat = document.querySelector('.profile__button-add');
+
+// popup \\
+const popUp = document.querySelector('.popup');
+const popUpCloseBtn = document.querySelector('.popup__close');
+const formElement = document.querySelector('.popup__form');
 const nameInput = document.querySelector('.popup__input-text_type_name');
 const jobInput = document.querySelector('.popup__input-text_type_job');
 
-
-
-const openBtn = document.querySelector('.profile__button-edit');
-const popUpCloseBtn = document.querySelector('.popup__close');
-const formElement = document.querySelector('.popup__form');
-
-
-const popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
-const openBtnCreat = document.querySelector('.profile__button-add');
-
+// popup creat \\
 const popUpCreat = document.querySelector('.popup-creat');
+const popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
+const creatCardBtn = document.querySelector('.popup-creat__button');
+const inputName = document.querySelector('.popup-creat__input-name');
+const inputLink = document.querySelector('.popup-creat__input-link');
+const formElAddCard = document.querySelector('.popup-creat__form');
+const fallbackImage = 'https://www.froben11.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png';
+
+// popup img \\
+const btnImgPopClose = document.querySelector('.popup-img__close');
 const btnImgPop = document.querySelector('.popup-img');
-const popUp = document.querySelector('.popup');
+const popImage = document.querySelector('.popup-img__image');
+const popImageSub = document.querySelector('.popup-img__subtitle');
+
 
 function openPopup(popup) {
     popup.classList.add('popup__opened');
 }
+
 function closePopup(popup) {
     popup.classList.remove('popup__opened');
 }
+
+
+
+function formSubmitHandler(evt) {
+    evt.preventDefault();
+    profileNmae.textContent = nameInput.value;
+    profileJob.textContent = jobInput.value;
+    closePopup(popUp);
+}
+
+
+
+
+function addEl() {
+    const page = initialCards.map(getItem);
+
+    listContainerEl.prepend(...page);
+}
+addEl();
+
+function addCard(e) {
+    e.preventDefault();
+    const inputT = inputName.value;
+    const inputL = inputLink.value ? inputLink.value : fallbackImage
+    const listEl = getItem({
+        name: inputT,
+        link: inputL
+    });
+    closePopup(popUpCreat);
+    inputT.value = '';
+    inputLink.value = '';
+    listContainerEl.prepend(listEl);
+}
+
+function getItem(item) {
+    const newItem = templateEl.content.cloneNode(true);
+    const addTitle = newItem.querySelector('.cards__title');
+    const addImg = newItem.querySelector('.cards__image');
+    addTitle.textContent = item.name;
+    addImg.src = item.link;
+    addImg.alt = item.name;
+
+    addImg.addEventListener("click", () => {
+        openImg(item);
+    });
+
+    const removeBtn = newItem.querySelector('.cards__bin');
+    removeBtn.addEventListener('click', deleteItem);
+
+    const likeBtn = newItem.querySelector('.cards__heart');
+    likeBtn.addEventListener('click', toggleLikeIcon);
+
+    return newItem;
+}
+
+function openImg(item) {
+    popImage.src = item.link;
+    popImage.alt = item.name;
+    popImageSub.textContent = item.name;
+    openPopup(btnImgPop);
+}
+
+function deleteItem(event) {
+    event.target.closest('.cards').remove();
+}
+
+function toggleLikeIcon(evt) {
+    evt.target.classList.toggle('cards__heart_active');
+}
+
+
 openBtn.addEventListener('click', () => {
     openPopup(popUp);
 });
@@ -71,83 +151,8 @@ popUpCloseBtnCreat.addEventListener('click', () => {
     closePopup(popUpCreat);
 });
 
-function formSubmitHandler(evt) {
-    evt.preventDefault();
-
-    profileNmae.textContent = nameInput.value;
-    profileJob.textContent = jobInput.value;
-    closePopup(popUp);
-}
-
+btnImgPopClose.addEventListener('click', () => {
+    closePopup(btnImgPop);
+});
 formElement.addEventListener('submit', formSubmitHandler);
-
-
-function addEl() {
-    const page = initialCards.map(getItem);
-
-    listContainerEl.prepend(...page);
-}
-
-function addCard(e) {
-    e.preventDefault();
-    const inputT = inputName.value;
-    const inputL = inputLink.value ? inputLink.value : fallbackImage
-    const listEl = getItem({
-        name: inputT,
-        link: inputL
-    });
-
-    inputT.value = '';
-    inputLink.value = '';
-
-
-    listContainerEl.prepend(listEl);
-    closePopup(popUpCreat);
-    
-
-}
-
-function getItem(item) {
-    const newItem = templateEl.content.cloneNode(true);
-    const addTitle = newItem.querySelector('.cards__title');
-    const addImg = newItem.querySelector('.cards__image');
-    addTitle.textContent = item.name;
-    addImg.src = item.link;
-    addImg.alt = item.name;
-
-
-    newItem.querySelector('.cards').addEventListener('click', function () {
-        document.querySelector('.popup-img__image').src = this.querySelector('.cards__image').src;
-        document.querySelector('.popup-img__image').alt = this.querySelector('.cards__title').textContent;
-        document.querySelector('.popup-img__subtitle').textContent = this.querySelector('.cards__title').textContent;
-    });
-
-    addImg.addEventListener('click', () => {
-        openPopup(btnImgPop);
-    });
-    btnImgPopClose.addEventListener('click', () => {
-        closePopup(btnImgPop);
-    });
-
-    const removeBtn = newItem.querySelector('.cards__bin');
-    removeBtn.addEventListener('click', deleteItem);
-
-    const likeBtn = newItem.querySelector('.cards__heart');
-    likeBtn.addEventListener('click', likeBtnH);
-
-    creatCardBtn.addEventListener('click', addCard);
-
-
-    return newItem;
-}
-
-
-function deleteItem(event) {
-    event.target.closest('.cards').remove();
-}
-creatCardBtn.addEventListener('submit', addCard);
-
-function likeBtnH(evt) {
-    evt.target.classList.toggle('cards__heart_active');
-}
-addEl();
+formElAddCard.addEventListener('submit', addCard);
