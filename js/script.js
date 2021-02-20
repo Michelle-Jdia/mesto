@@ -32,24 +32,24 @@ const fallbackImage = 'https://www.froben11.de/wp-content/uploads/2016/10/oriont
 
 const btnImgPopClose = document.querySelector('.popup-img__close');
 
-let profileNmae = document.querySelector('.profile__name');
-let profileJob = document.querySelector('.profile__subtitle');
-let nameInput = document.querySelector('.popup__input-text_type_name');
-let jobInput = document.querySelector('.popup__input-text_type_job');
+const profileNmae = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__subtitle');
+const nameInput = document.querySelector('.popup__input-text_type_name');
+const jobInput = document.querySelector('.popup__input-text_type_job');
 
 
 
-let openBtn = document.querySelector('.profile__button-edit');
-let popUpCloseBtn = document.querySelector('.popup__close');
-let formElement = document.querySelector('.popup__form');
+const openBtn = document.querySelector('.profile__button-edit');
+const popUpCloseBtn = document.querySelector('.popup__close');
+const formElement = document.querySelector('.popup__form');
 
 
-let popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
-let openBtnCreat = document.querySelector('.profile__button-add');
+const popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
+const openBtnCreat = document.querySelector('.profile__button-add');
 
-let popUpCreat = document.querySelector('.popup-creat');
+const popUpCreat = document.querySelector('.popup-creat');
 const btnImgPop = document.querySelector('.popup-img');
-let popUp = document.querySelector('.popup');
+const popUp = document.querySelector('.popup');
 
 function openPopup(popup) {
     popup.classList.add('popup__opened');
@@ -85,10 +85,11 @@ formElement.addEventListener('submit', formSubmitHandler);
 function addEl() {
     const page = initialCards.map(getItem);
 
-    listContainerEl.append(...page);
+    listContainerEl.prepend(...page);
 }
 
 function addCard(e) {
+    e.preventDefault();
     const inputT = inputName.value;
     const inputL = inputLink.value ? inputLink.value : fallbackImage
     const listEl = getItem({
@@ -96,13 +97,13 @@ function addCard(e) {
         link: inputL
     });
 
-    inputName.value = '';
+    inputT.value = '';
     inputLink.value = '';
 
 
-    listContainerEl.append(listEl);
+    listContainerEl.prepend(listEl);
     closePopup(popUpCreat);
-    e.preventDefault();
+    
 
 }
 
@@ -142,15 +143,11 @@ function getItem(item) {
 
 
 function deleteItem(event) {
-    const targetEl = event.target;
-    const targetItem = targetEl.closest('.cards');
-    targetItem.remove();
+    event.target.closest('.cards').remove();
 }
-creatCardBtn.addEventListener('click', addCard);
+creatCardBtn.addEventListener('submit', addCard);
 
-function likeBtnH(eve) {
-    const targetH = eve.target;
-    const targetBtn = targetH.closest('.cards__heart');
-    targetBtn.classList.toggle('cards__heart_active');
+function likeBtnH(evt) {
+    evt.target.classList.toggle('cards__heart_active');
 }
 addEl();
