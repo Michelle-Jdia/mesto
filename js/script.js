@@ -95,7 +95,7 @@ function addCard(e) {
         link: inputL
     });
     closePopup(popUpCreat);
-    inputT.value = '';
+    inputName.value = '';
     inputLink.value = '';
     listContainerEl.prepend(listEl);
 }
