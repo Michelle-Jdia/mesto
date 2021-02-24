@@ -66,11 +66,11 @@ function openPopup(popup) {
 
 function closePopup(popup) {
     popup.classList.remove('popup__opened');
-    
+
 }
 
-function closePopupByOverlay (evt) {
-    if(evt.target.classList.contains('popup')) {
+function closePopupByOverlay(evt) {
+    if (evt.target.classList.contains('popup')) {
         const overlayTarget = document.querySelector('.popup__opened');
         closePopup(overlayTarget);
     }
@@ -79,7 +79,7 @@ function closePopupByOverlay (evt) {
 
 }
 
-const closePopupByEsc = document.addEventListener('keydown', function(event) {
+const closePopupByEsc = document.addEventListener('keydown', function (event) {
 
     const key = event.key;
     if (key === "Escape") {
