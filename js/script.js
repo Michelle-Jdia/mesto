@@ -61,12 +61,33 @@ const popImageSub = document.querySelector('.popup-img__subtitle');
 
 function openPopup(popup) {
     popup.classList.add('popup__opened');
+    document.addEventListener('click', closePopupByOverlay);
 }
 
 function closePopup(popup) {
     popup.classList.remove('popup__opened');
+    
 }
 
+function closePopupByOverlay (evt) {
+    if(evt.target.classList.contains('popup')) {
+        const overlayTarget = document.querySelector('.popup__opened');
+        closePopup(overlayTarget);
+    }
+
+
+
+}
+
+const closePopupByEsc = document.addEventListener('keydown', function(event) {
+
+    const key = event.key;
+    if (key === "Escape") {
+        popUp.classList.remove('popup__opened');
+        popUpCreat.classList.remove('popup__opened');
+        btnImgPop.classList.remove('popup__opened');
+    }
+});
 
 
 function formSubmitHandler(evt) {

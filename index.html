@@ -7,6 +7,7 @@
     <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css">
     <script src="./js/script.js" defer></script>
+    <script src="./js/validate.js" defer></script>
 </head>
 
 <body class="body">
@@ -58,13 +59,17 @@
         <div class="popup">
             <div class="popup__container">
                 <button class="popup__close" type="button"></button>
-                <form action="index.html" method="post" class="popup__form" name="form">
+                <form action="#" method="post" class="form popup__form" name="form" novalidate>
                     <h2 class="popup__title">Редактировать профиль</h2>
-                    <input type="text" class="popup__input-text popup__input-text_type_name" value="Мишель Ждиа"
-                        name="name-input">
-                    <input type="text" class="popup__input-text popup__input-text_type_job" value="Студент Яндекс Практикума"
-                        name="job-input">
-                    <button class="popup__button" type="submit" for="form">Сохранить</button>
+                    <label class="popup__label" for="input-profile-name"></label>
+                    <input type="text" class="popup__input-text popup__input-text_type_name popup__input" value="Мишель Ждиа"
+                        name="name-input" placeholder="Имя" required minlength="2" maxlength="40" id="input-profile-name">
+                        <span class="popup__input-error" id="input-profile-name-error"></span>
+                        <label class="popup__label" for="input-about"></label>
+                    <input type="text" class="popup__input-text popup__input-text_type_job popup__input" value="Студент Яндекс Практикума"
+                        name="job-input" placeholder="О себе" required minlength="2" maxlength="200" id="input-about">
+                        <span class="popup__input-error" id="input-about-error"></span>
+                    <button class="popup__button popup__btn-submit" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
@@ -74,13 +79,17 @@
         <div class="popup popup-creat">
             <div class="popup-creat__container">
                 <button class="popup-creat__close" type="button"></button>
-                <form action="index.html" method="post" class="popup-creat__form" name="creat-form">
+                <form action="#" method="post" class="form popup-creat__form" name="creat-form" novalidate>
                     <h2 class="popup-creat__title">Новое место</h2>
-                    <input type="text" class="popup-creat__input-text popup-creat__input-name" value=""
-                        name="name-input" placeholder="Название">
-                    <input type="text" class="popup-creat__input-text popup-creat__input-link" value=""
-                        name="link-input" placeholder="Ссылка на картинку">
-                    <button class="popup-creat__button" type="submit" for="creat-form">Создать</button>
+                    <label class="popup-creat__label" for="input-name"></label>
+                    <input type="text" class="popup-creat__input-text popup-creat__input-name popup__input" value=""
+                        name="title-input" placeholder="Название" required minlength="2" maxlength="30" id="input-name">
+                        <span class="popup-creat__input-title-error popup__input-error" id="input-name-error"></span>
+                        <label class="popup-creat__label" for="input-link"></label>
+                    <input type="url" class="popup-creat__input-text popup-creat__input-link popup__input" value=""
+                        name="link-input" placeholder="Ссылка на картинку" required id="input-link">
+                        <span class="popup-creat__input-link-error popup__input-error" id="input-link-error"></span>
+                    <button class="popup-creat__button popup__button  popup__btn-submit" type="submit">Создать</button>
                 </form>
             </div>
         </div>
