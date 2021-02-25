@@ -7,19 +7,19 @@
         errorClass: 'popup__error_visible'
     };
 
-    const showInputError = (formElement, inputElement, errorMessage) => {
+    const showInputError = (formElement, inputElement, errorMessage, selectorList) => {
 
         const errorElement = formElement.querySelector(`#${inputElement.id}-error`); 
- 
+       
         errorElement.textContent = errorMessage; 
-        errorElement.classList.add('popup__error_visible');
+        errorElement.classList.add(selectorList.errorClass);
     }
 
     const hideInputError = (formElement, inputElement) => {
         const errorElement = formElement.querySelector(`#${inputElement.id}-error`); 
  
         errorElement.textContent = ''; 
-        errorElement.classList.remove('popup__error_visible'); 
+        errorElement.classList.remove(selectorList.errorClass); 
 
     };
 
