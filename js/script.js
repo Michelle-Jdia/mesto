@@ -68,6 +68,7 @@ function openPopup(popup) {
     document.addEventListener('keydown', closePopupByEsc);
     document.addEventListener('keydown', closePopupByEsc);
     document.addEventListener('keydown', closePopupByEsc);
+    
 }
 
 function closePopup(popup) {
@@ -79,6 +80,7 @@ function closePopup(popup) {
     document.removeEventListener('keydown', closePopupByEsc);
     document.removeEventListener('keydown', closePopupByEsc);
     document.removeEventListener('keydown', closePopupByEsc);
+    
 }
 
 function closePopupByOverlay(evt) {
@@ -126,9 +128,11 @@ function addCard(e) {
         link: inputL
     });
     closePopup(popUpCreat);
-    formElAddCard.reset(); 
-    listContainerEl.prepend(listEl);
     formElAddCard.removeEventListener('submit', addCard);
+    formElAddCard.reset(); 
+  
+    listContainerEl.prepend(listEl);
+  
 }
 
 function getItem(item) {
