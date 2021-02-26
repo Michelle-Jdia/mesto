@@ -1,4 +1,4 @@
-.popup__input_type_error {
+.popup__input-error {
     color: #FF0000;
     font-size: 12px;
     line-height: 15px;
@@ -9,7 +9,7 @@
     transition: opacity 0.3s;
 }
 
-.popup__input_type_error:last-of-type {
+.popup__input-error:last-of-type {
     top: 60%;
     left: 43px;
 }
@@ -17,12 +17,12 @@
 
 @media all and (max-width: 682px) {
 
-    .popup__input_type_error {
+    .popup__input-error {
         top: 46%;
         left: 28px;
     }
 
-    .popup__input_type_error:last-of-type {
+    .popup__input-error:last-of-type {
         top: 65%;
         left: 28px;
     }
