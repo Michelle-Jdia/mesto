@@ -6,7 +6,7 @@
         inputErrorClass: 'popup__input-error',
         errorClass: 'popup__input-error_visible'
     };
-
+    
     const showInputError = (formElement, inputElement, errorMessage, selectorList) => {
 
         const errorElement = formElement.querySelector(`#${inputElement.id}-error`); 
@@ -67,15 +67,18 @@
         })
       };
 
+      function disableSubmitButton(btnElement, selectorList) {
+        btnElement.disabled = true;
+        btnElement.classList.add(selectorList.inactiveButtonClass);
+    }
 
-    const toggleBtnState = (inputList, btnElement, select) => {
+    const toggleBtnState = (inputList, btnElement, selectorList) => {
        
-        if (hasNotValidInput(inputList, select)) {
-            btnElement.disabled = true;
-            btnElement.classList.add(select.inactiveButtonClass);
+        if (hasNotValidInput(inputList, selectorList)) {
+            disableSubmitButton(btnElement, selectorList);
         } else {
             btnElement.disabled = false;
-            btnElement.classList.remove(select.inactiveButtonClass);
+            btnElement.classList.remove(selectorList.inactiveButtonClass);
         }
 
     };

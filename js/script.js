@@ -61,44 +61,29 @@ const popImageSub = document.querySelector('.popup-img__subtitle');
 
 function openPopup(popup) {
     popup.classList.add('popup__opened');
-    popUpProfile.addEventListener('click', closePopupByOverlay);
-    popUpCreat.addEventListener('click', closePopupByOverlay);
-    btnImgPop.addEventListener('click', closePopupByOverlay);
+    popup.addEventListener('click', closePopupByOverlay);
+    document.addEventListener('keydown', closePopupByEsc)
 
-    document.addEventListener('keydown', closePopupByEsc);
-    document.addEventListener('keydown', closePopupByEsc);
-    document.addEventListener('keydown', closePopupByEsc);
-    
 }
 
 function closePopup(popup) {
     popup.classList.remove('popup__opened');
-    popUpProfile.removeEventListener('click', closePopupByOverlay);
-    document.removeEventListener('click', closePopupByOverlay);
-    document.removeEventListener('click', closePopupByOverlay);
-
+    popup.removeEventListener('click', closePopupByOverlay);
     document.removeEventListener('keydown', closePopupByEsc);
-    document.removeEventListener('keydown', closePopupByEsc);
-    document.removeEventListener('keydown', closePopupByEsc);
-    
 }
 
 function closePopupByOverlay(evt) {
     if (evt.target.classList.contains('popup')) {
         closePopup(evt.target);
     }
-
-
-
 }
 
 function closePopupByEsc(event) {
 
     const key = event.key;
     if (key === "Escape") {
-        popUpProfile.classList.remove('popup__opened');
-        popUpCreat.classList.remove('popup__opened');
-        btnImgPop.classList.remove('popup__opened');
+        const openedPopup = document.querySelector('.popup__opened');
+        closePopup(openedPopup);
     }
 };
 
@@ -128,12 +113,12 @@ function addCard(e) {
         link: inputL
     });
     closePopup(popUpCreat);
-    formElAddCard.removeEventListener('submit', addCard);
-    formElAddCard.reset(); 
-  
+    formElAddCard.reset();
+    disableSubmitButton(creatCardBtn, selectorList);
     listContainerEl.prepend(listEl);
-  
+
 }
+
 
 function getItem(item) {
     const newItem = templateEl.content.cloneNode(true);
