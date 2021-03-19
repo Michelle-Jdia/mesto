@@ -1,4 +1,5 @@
 import {Cards} from './card.js';
+import { FormValidator, selectorList } from './FormValidator.js';
 const initialCards = [{
         name: 'Эр-Ракка',
         link: 'https://www.hi4best.com/raqqa/raqqa.jpg'
@@ -56,6 +57,7 @@ const formElAddCard = document.querySelector('.popup-creat__form');
 const btnImgPopClose = document.querySelector('.popup-img__close');
 const btnImgPop = document.querySelector('.popup-img');
 
+const formList = Array.from(document.querySelectorAll(selectorList.formSelector));
 
 //start open and close popup functions
 export function openPopup(popup) {
@@ -109,7 +111,9 @@ function addNewCard(e) {
     closePopup(popUpCreat);
 
     formElAddCard.reset();
-    disableSubmitButton(creatCardBtn, selectorList);
+    // const d = new FormValidator(selectorList, formElement);
+    // d.disableSubmitButton(buttonElement, selectorList);
+    // disableSubmitButton(creatCardBtn, selectorList);
 }
 initialCards.forEach(function (item) {
     addEl(item, elementsContainer, '.cards')
@@ -138,3 +142,8 @@ btnImgPopClose.addEventListener('click', () => {
     closePopup(btnImgPop);
 });
 popUpForm.addEventListener('submit', handlerTextForms);
+
+formList.forEach((formElement) => {
+    const formValidator = new FormValidator(selectorList, formElement);
+    formValidator.enableValidation(selectorList, formElement);
+  });
