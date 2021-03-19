@@ -1,4 +1,4 @@
-import {openPopup} from './script.js';
+import {openPopup} from './index.js';
 
 export class Cards {
     constructor(card) {
