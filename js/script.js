@@ -103,38 +103,7 @@ function addEl(e) {
 // to creat new card in page
 function addNewCard(e) {
     e.preventDefault();
-<<<<<<< HEAD
-    const inputT = inputName.value;
-    const inputL = inputLink.value ? inputLink.value : fallbackImage
-    const listEl = getItem({
-        name: inputT,
-        link: inputL
-    });
-    closePopup(popUpCreat);
-    formElAddCard.reset();
-    disableSubmitButton(creatCardBtn, selectorList);
-    listContainerEl.prepend(listEl);
-
-}
-
-
-function getItem(item) {
-    const newItem = templateEl.content.cloneNode(true);
-    const addTitle = newItem.querySelector('.cards__title');
-    const addImg = newItem.querySelector('.cards__image');
-    addTitle.textContent = item.name;
-    addImg.src = item.link;
-    addImg.alt = item.name;
-
-    addImg.addEventListener("click", () => {
-        openImg(item);
-    });
-
-    const removeBtn = newItem.querySelector('.cards__bin');
-    removeBtn.addEventListener('click', deleteItem);
-=======
     const newCard = {name: inputName.value, link: inputLink.value};
->>>>>>> gh-pages
 
     addEl(newCard);
     closePopup(popUpCreat);
