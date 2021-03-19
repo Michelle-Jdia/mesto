@@ -1,3 +1,4 @@
+import {Cards} from './card.js';
 const initialCards = [{
         name: 'Эр-Ракка',
         link: 'https://www.hi4best.com/raqqa/raqqa.jpg'
@@ -26,9 +27,8 @@ const initialCards = [{
 
 //  selectors \\
 
-// template \\
-const listContainerEl = document.querySelector('.pictures');
-const templateEl = document.querySelector('.template');
+// cards section \\
+const elementsContainer = document.querySelector('.pictures');
 
 // profile \\
 const profileNmae = document.querySelector('.profile__name');
@@ -45,21 +45,20 @@ const jobInput = document.querySelector('.popup__input-text_type_job');
 
 // popup creat \\
 const popUpCreat = document.querySelector('.popup-creat');
+const containerPopCreat = popUpCreat.querySelector('.popup-creat__container');
 const popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
 const creatCardBtn = document.querySelector('.popup-creat__button');
 const inputName = document.querySelector('.popup-creat__input-name');
 const inputLink = document.querySelector('.popup-creat__input-link');
 const formElAddCard = document.querySelector('.popup-creat__form');
-const fallbackImage = 'https://www.froben11.de/wp-content/uploads/2016/10/orionthemes-placeholder-image.png';
 
 // popup img \\
 const btnImgPopClose = document.querySelector('.popup-img__close');
 const btnImgPop = document.querySelector('.popup-img');
-const popImage = document.querySelector('.popup-img__image');
-const popImageSub = document.querySelector('.popup-img__subtitle');
 
 
-function openPopup(popup) {
+//start open and close popup functions
+export function openPopup(popup) {
     popup.classList.add('popup__opened');
     popup.addEventListener('click', closePopupByOverlay);
     document.addEventListener('keydown', closePopupByEsc)
@@ -86,8 +85,9 @@ function closePopupByEsc(event) {
         closePopup(openedPopup);
     }
 };
+//end open and close popup functions
 
-
+// edite profile function
 function handlerTextForms(evt) {
     evt.preventDefault();
     profileNmae.textContent = nameInput.value;
@@ -95,68 +95,31 @@ function handlerTextForms(evt) {
     closePopup(popUpProfile);
 }
 
+//creat cards
 
-
-function addEl() {
-    const page = initialCards.map(getItem);
-
-    listContainerEl.prepend(...page);
+function addEl(e) {
+    elementsContainer.prepend(new Cards(e, '.template').addCard());
 }
-addEl();
-
-function addCard(e) {
+// to creat new card in page
+function addNewCard(e) {
     e.preventDefault();
-    const inputT = inputName.value;
-    const inputL = inputLink.value ? inputLink.value : fallbackImage
-    const listEl = getItem({
-        name: inputT,
-        link: inputL
-    });
+    const newCard = {name: inputName.value, link: inputLink.value};
+
+    addEl(newCard);
     closePopup(popUpCreat);
+
     formElAddCard.reset();
     disableSubmitButton(creatCardBtn, selectorList);
-    listContainerEl.prepend(listEl);
-
 }
+initialCards.forEach(function (item) {
+    addEl(item, elementsContainer, '.cards')
+})
 
 
-function getItem(item) {
-    const newItem = templateEl.content.cloneNode(true);
-    const addTitle = newItem.querySelector('.cards__title');
-    const addImg = newItem.querySelector('.cards__image');
-    addTitle.textContent = item.name;
-    addImg.src = item.link;
-    addImg.alt = item.name;
 
-    addImg.addEventListener("click", () => {
-        openImg(item);
-    });
+containerPopCreat.addEventListener('submit', addNewCard);
 
-    const removeBtn = newItem.querySelector('.cards__bin');
-    removeBtn.addEventListener('click', deleteItem);
-
-    const likeBtn = newItem.querySelector('.cards__heart');
-    likeBtn.addEventListener('click', toggleLikeIcon);
-
-    return newItem;
-}
-
-function openImg(item) {
-    popImage.src = item.link;
-    popImage.alt = item.name;
-    popImageSub.textContent = item.name;
-    openPopup(btnImgPop);
-}
-
-function deleteItem(event) {
-    event.target.closest('.cards').remove();
-}
-
-function toggleLikeIcon(evt) {
-    evt.target.classList.toggle('cards__heart_active');
-}
-
-
+// event listeners 
 openBtn.addEventListener('click', () => {
     openPopup(popUpProfile);
 });
@@ -175,4 +138,3 @@ btnImgPopClose.addEventListener('click', () => {
     closePopup(btnImgPop);
 });
 popUpForm.addEventListener('submit', handlerTextForms);
-formElAddCard.addEventListener('submit', addCard);
