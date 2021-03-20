@@ -55,7 +55,9 @@ const formElAddCard = document.querySelector('.popup-creat__form');
 
 // popup img \\
 const btnImgPopClose = document.querySelector('.popup-img__close');
-const btnImgPop = document.querySelector('.popup-img');
+export const btnImgPop = document.querySelector('.popup-img');
+export const popImage = document.querySelector('.popup-img__image'); 
+export const popImageSub = document.querySelector('.popup-img__subtitle');
 
 const formList = Array.from(document.querySelectorAll(selectorList.formSelector));
 
