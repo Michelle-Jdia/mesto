@@ -37,11 +37,11 @@ class FormValidator {
         }
     };
 
-
     deleteValidationErrors() {
-        this._inputList.forEach((input) => {
-            this._hideInputError(input)
-        });
+        this._inputs.forEach((form) => {
+            this._hideInputError (form)
+          });
+          this._toggleButtonState()
     };
 
     _setEventListeners() {

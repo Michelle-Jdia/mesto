@@ -56,6 +56,10 @@ function closePopup(popup) {
     popup.classList.remove('popup__opened');
     popup.removeEventListener('click', closePopupByOverlay);
     document.removeEventListener('keydown', closePopupByEsc);
+    nameInput.value = "";
+    jobInput.value = "";
+    inputName.value = "";
+    inputLink.value = "";
 }
 
 function closePopupByOverlay(evt) {
@@ -80,6 +84,8 @@ function submitEditProfileForm(evt) {
     profileNmae.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     closePopup(popUpProfile); 
+    nameInput.value = " ";
+    jobInput.value = " ";
 }
 
 //creat cards
@@ -128,4 +134,3 @@ btnImgPopClose.addEventListener('click', () => {
     closePopup(btnImgPop);
 });
 popUpForm.addEventListener('submit', submitEditProfileForm);
-
