@@ -36,8 +36,8 @@ export class Cards {
         })
     }
     _getItem() {
-        const select = document.querySelector('.template');
-        return select.content.cloneNode(true)
+        const select = document.querySelector('.template').content.cloneNode(true);
+        return select
     }
     addCard() {
         this._element = this._getItem();

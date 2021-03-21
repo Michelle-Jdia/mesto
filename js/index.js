@@ -33,7 +33,6 @@ const jobInput = document.querySelector('.popup__input-text_type_job');
 const popUpCreat = document.querySelector('.popup-creat');
 const containerPopCreat = popUpCreat.querySelector('.popup-creat__container');
 const popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
-const creatCardBtn = document.querySelector('.popup-creat__button');
 const inputName = document.querySelector('.popup-creat__input-name');
 const inputLink = document.querySelector('.popup-creat__input-link');
 const formElAddCard = document.querySelector('.popup-creat__form');
@@ -44,7 +43,6 @@ export const btnImgPop = document.querySelector('.popup-img');
 export const popImage = document.querySelector('.popup-img__image');
 export const popImageSub = document.querySelector('.popup-img__subtitle');
 
-const formList = Array.from(document.querySelectorAll(validationConfig.formSelector));
 
 //start open and close popup functions
 export function openPopup(popup) {
@@ -81,13 +79,13 @@ function submitEditProfileForm(evt) {
     evt.preventDefault();
     profileNmae.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    closePopup(popUpProfile);
+    closePopup(popUpProfile); 
 }
 
 //creat cards
 
 function addCardToDOM(e) {
-    elementsContainer.prepend(new Cards(e, '.template').addCard());
+elementsContainer.prepend(new Cards(e, '.template').addCard());
 }
 // to creat new card in page
 function submitAddCardForm(e) {
@@ -101,19 +99,14 @@ function submitAddCardForm(e) {
     closePopup(popUpCreat);
 
     formElAddCard.reset();
-    //  const d = new FormValidator(buttonElement, selectorList);
-    //  d.disableSubmitButton(buttonElement, selectorList);
-    //disableSubmitButton(creatCardBtn, selectorList);
 }
 initialCards.forEach(function (item) {
     addCardToDOM(item)
 })
-
-// function disableSubmitButton(btnElement, selectorList) {
-//     btnElement.disabled = true;
-//     btnElement.classList.add(selectorList.inactiveButtonClass);
-// }
-
+const forProfile = new FormValidator(validationConfig, popUpProfile)
+forProfile.enableValidation();
+const forCard = new FormValidator(validationConfig, popUpCreat)
+forCard.enableValidation();
 containerPopCreat.addEventListener('submit', submitAddCardForm);
 
 // event listeners 
@@ -136,7 +129,3 @@ btnImgPopClose.addEventListener('click', () => {
 });
 popUpForm.addEventListener('submit', submitEditProfileForm);
 
-formList.forEach((formElement) => {
-    const formValidator = new FormValidator(validationConfig, formElement);
-    formValidator.enableValidation(validationConfig, formElement);
-});
