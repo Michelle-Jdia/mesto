@@ -91,7 +91,8 @@ function submitEditProfileForm(evt) {
 //creat cards
 
 function addCardToDOM(e) {
-elementsContainer.prepend(new Cards(e, '.template').addCard());
+const card = elementsContainer.prepend(new Cards(e, '.template').addCard());
+return card
 }
 // to creat new card in page
 function submitAddCardForm(e) {
@@ -109,10 +110,10 @@ function submitAddCardForm(e) {
 initialCards.forEach(function (item) {
     addCardToDOM(item)
 })
-const forProfile = new FormValidator(validationConfig, popUpProfile)
-forProfile.enableValidation();
-const forCard = new FormValidator(validationConfig, popUpCreat)
-forCard.enableValidation();
+const forProfilePop = new FormValidator(validationConfig, popUpProfile)
+forProfilePop.enableValidation();
+const forCreatPop = new FormValidator(validationConfig, popUpCreat)
+forCreatPop.enableValidation();
 containerPopCreat.addEventListener('submit', submitAddCardForm);
 
 // event listeners 
@@ -121,6 +122,7 @@ openBtn.addEventListener('click', () => {
 });
 popUpCloseBtn.addEventListener('click', () => {
     closePopup(popUpProfile);
+    forProfilePop.deleteValidationErrors();
 });
 
 openBtnCreat.addEventListener('click', () => {
@@ -128,6 +130,8 @@ openBtnCreat.addEventListener('click', () => {
 });
 popUpCloseBtnCreat.addEventListener('click', () => {
     closePopup(popUpCreat);
+    forCreatPop.deleteValidationErrors();
+
 });
 
 btnImgPopClose.addEventListener('click', () => {
