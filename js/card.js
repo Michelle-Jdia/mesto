@@ -2,8 +2,8 @@ import {openPopup} from './index.js';
 import {btnImgPop, popImage, popImageSub} from './index.js';
 
 export class Cards {
-    constructor(card, selector) {
-        this._selector = selector;
+    constructor(card, cardSelector) {
+        this._cardSelector = cardSelector;
         this._name = card.name;
         this._link = card.link;
     }
@@ -36,8 +36,8 @@ export class Cards {
         })
     }
     _getItem() {
-        const select = document.querySelector('.template').content.cloneNode(true);
-        return select
+        const card = document.querySelector('.template').content.cloneNode(true);
+        return card
     }
     addCard() {
         this._element = this._getItem();
@@ -45,8 +45,9 @@ export class Cards {
         this._setEventListeners();
 
         this._element.querySelector('.cards__title').textContent = this._name;
-        this._element.querySelector('.cards__image').src = this._link;
-        this._element.querySelector('.cards__image').alt = this._link;
+        const cardLink = this._element.querySelector('.cards__image');
+        cardLink.src = this._link;
+        cardLink.alt = this._link;
 
         return this._element;
     }

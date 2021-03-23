@@ -56,10 +56,6 @@ function closePopup(popup) {
     popup.classList.remove('popup__opened');
     popup.removeEventListener('click', closePopupByOverlay);
     document.removeEventListener('keydown', closePopupByEsc);
-    nameInput.value = "";
-    jobInput.value = "";
-    inputName.value = "";
-    inputLink.value = "";
 }
 
 function closePopupByOverlay(evt) {
@@ -83,16 +79,19 @@ function submitEditProfileForm(evt) {
     evt.preventDefault();
     profileNmae.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    closePopup(popUpProfile); 
+    closePopup(popUpProfile);
     nameInput.value = " ";
     jobInput.value = " ";
 }
 
 //creat cards
-
+function creatCard (e) {
+    return new Cards(e, '.template').addCard(e);
+    
+}
 function addCardToDOM(e) {
-const card = elementsContainer.prepend(new Cards(e, '.template').addCard());
-return card
+   elementsContainer.prepend(creatCard (e));
+      
 }
 // to creat new card in page
 function submitAddCardForm(e) {
@@ -101,40 +100,47 @@ function submitAddCardForm(e) {
         name: inputName.value,
         link: inputLink.value
     };
-
     addCardToDOM(newCard);
     closePopup(popUpCreat);
-
     formElAddCard.reset();
 }
 initialCards.forEach(function (item) {
     addCardToDOM(item)
 })
-const forProfilePop = new FormValidator(validationConfig, popUpProfile)
-forProfilePop.enableValidation();
-const forCreatPop = new FormValidator(validationConfig, popUpCreat)
-forCreatPop.enableValidation();
+//  validation forms
+const editProfileValidator = new FormValidator(validationConfig, popUpProfile)
+editProfileValidator.enableValidation();
+const addCardValidator = new FormValidator(validationConfig, popUpCreat)
+addCardValidator.enableValidation();
 containerPopCreat.addEventListener('submit', submitAddCardForm);
 
 // event listeners 
+
+// open profile popup and reset forms value and errors
 openBtn.addEventListener('click', () => {
+    nameInput.value = "";
+    jobInput.value = "";
+    editProfileValidator.deleteValidationErrors();
     openPopup(popUpProfile);
 });
+// close profile popup
 popUpCloseBtn.addEventListener('click', () => {
     closePopup(popUpProfile);
-    forProfilePop.deleteValidationErrors();
 });
-
+// open creat card popup and reset forms value and errors
 openBtnCreat.addEventListener('click', () => {
+    inputName.value = "";
+    inputLink.value = "";
+    addCardValidator.deleteValidationErrors();
     openPopup(popUpCreat);
 });
+// close creat card popup
 popUpCloseBtnCreat.addEventListener('click', () => {
     closePopup(popUpCreat);
-    forCreatPop.deleteValidationErrors();
-
 });
-
+//close image handler popup
 btnImgPopClose.addEventListener('click', () => {
     closePopup(btnImgPop);
 });
+//edite inputs in popup profile
 popUpForm.addEventListener('submit', submitEditProfileForm);

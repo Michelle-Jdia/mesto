@@ -1,9 +1,6 @@
 export {
     FormValidator
 };
-// import {
-//     validationConfig
-// } from './utils/constants.js';
 class FormValidator {
     constructor(validationConfig, formSelector) {
         this._formSelector = validationConfig.formSelector;
