@@ -86,7 +86,7 @@ function submitEditProfileForm(evt) {
 
 //creat cards
 function creatCard (e) {
-    return new Cards(e, '.template').addCard(e);
+    return new Cards(e, '.template').addCard();
     
 }
 function addCardToDOM(e) {
