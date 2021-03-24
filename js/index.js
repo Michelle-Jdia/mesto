@@ -76,8 +76,7 @@ function submitEditProfileForm(evt) {
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     closePopup(popUpProfile);
-    // nameInput.value = " ";
-    // jobInput.value = " ";
+
 }
 
 //creat cards
@@ -116,6 +115,8 @@ containerPopCreat.addEventListener('submit', submitAddCardForm);
 openBtn.addEventListener('click', () => {
     editProfileValidator.deleteValidationErrors();
     openPopup(popUpProfile);
+    nameInput.value = "";
+    jobInput.value = "";
 });
 // close profile popup
 popUpCloseBtn.addEventListener('click', () => {
