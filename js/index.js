@@ -118,8 +118,6 @@ containerPopCreat.addEventListener('submit', submitAddCardForm);
 
 // open profile popup and reset forms value and errors
 openBtn.addEventListener('click', () => {
-    nameInput.value = "";
-    jobInput.value = "";
     editProfileValidator.deleteValidationErrors();
     openPopup(popUpProfile);
 });

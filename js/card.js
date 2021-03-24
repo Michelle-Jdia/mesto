@@ -36,19 +36,16 @@ export class Cards {
         })
     }
     _getItem() {
-        const card = document.querySelector('.template').content.cloneNode(true);
+        const card = document.querySelector(this._cardSelector).content.querySelector('.cards').cloneNode(true);
         return card
     }
     addCard() {
         this._element = this._getItem();
-
-        this._setEventListeners();
-
         this._element.querySelector('.cards__title').textContent = this._name;
         const cardLink = this._element.querySelector('.cards__image');
         cardLink.src = this._link;
         cardLink.alt = this._link;
-
+        this._setEventListeners();
         return this._element;
     }
 }
