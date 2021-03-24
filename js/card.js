@@ -1,6 +1,11 @@
-import {openPopup} from './index.js';
-import {btnImgPop, popImage, popImageSub} from './index.js';
-
+import {
+    openPopup
+} from './index.js';
+import {
+    btnImgPop,
+    popImageSub,
+    popImage
+} from './utils/constants.js';
 export class Cards {
     constructor(card, cardSelector) {
         this._cardSelector = cardSelector;
@@ -25,13 +30,13 @@ export class Cards {
         removeBtn.addEventListener('click', (event) => {
             this._deleteItem(event);
         });
-    
+
         const likeBtn = this._element.querySelector('.cards__heart');
         likeBtn.addEventListener('click', (event) => {
             this._toggleLikeIcon(event);
         });
 
-            this._element.querySelector('.cards__image').addEventListener('click', (event) => {
+        this._element.querySelector('.cards__image').addEventListener('click', (event) => {
             this._openImg(event);
         })
     }

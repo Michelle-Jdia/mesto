@@ -5,7 +5,7 @@ import {
     FormValidator
 } from './FormValidator.js';
 import {
-    validationConfig
+    validationConfig, btnImgPop
 } from './utils/constants.js';
 import {
     initialCards
@@ -17,7 +17,7 @@ import {
 const elementsContainer = document.querySelector('.pictures');
 
 // profile \\
-const profileNmae = document.querySelector('.profile__name');
+const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__subtitle');
 const openBtn = document.querySelector('.profile__button-edit');
 const openBtnCreat = document.querySelector('.profile__button-add');
@@ -39,10 +39,6 @@ const formElAddCard = document.querySelector('.popup-creat__form');
 
 // popup img \\
 const btnImgPopClose = document.querySelector('.popup-img__close');
-export const btnImgPop = document.querySelector('.popup-img');
-export const popImage = document.querySelector('.popup-img__image');
-export const popImageSub = document.querySelector('.popup-img__subtitle');
-
 
 //start open and close popup functions
 export function openPopup(popup) {
@@ -77,11 +73,11 @@ function closePopupByEsc(event) {
 // edite profile function
 function submitEditProfileForm(evt) {
     evt.preventDefault();
-    profileNmae.textContent = nameInput.value;
+    profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     closePopup(popUpProfile);
-    nameInput.value = " ";
-    jobInput.value = " ";
+    // nameInput.value = " ";
+    // jobInput.value = " ";
 }
 
 //creat cards
