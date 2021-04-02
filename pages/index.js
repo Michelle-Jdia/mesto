@@ -1,15 +1,12 @@
 import {
     Cards
-} from './card.js';
+} from '../componets/card.js';
 import {
     FormValidator
-} from './FormValidator.js';
+} from '../componets/FormValidator.js';
 import {
-    validationConfig, btnImgPop
-} from './utils/constants.js';
-import {
-    initialCards
-} from './initial-cards.js';
+    validationConfig, btnImgPop, initialCards
+} from '../utils/constants.js';
 
 //  selectors \\
 

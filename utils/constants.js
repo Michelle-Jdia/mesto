@@ -1,5 +1,15 @@
-export {initialCards};
-const initialCards = [{
+export const validationConfig = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input-error',
+    errorClass: 'popup__input-error_visible'
+};
+
+
+
+export const initialCards = [{
     name: 'Эр-Ракка',
     link: 'https://www.hi4best.com/raqqa/raqqa.jpg'
 },
@@ -24,3 +34,8 @@ const initialCards = [{
     link: 'https://i.pinimg.com/originals/b2/50/4d/b2504dba83db45e1dbbc1a14358a4e3b.jpg'
 }
 ];
+
+
+export const btnImgPop = document.querySelector('.popup-img');
+export const popImage = document.querySelector('.popup-img__image');
+export const popImageSub = document.querySelector('.popup-img__subtitle');

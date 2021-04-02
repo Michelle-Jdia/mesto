@@ -1,11 +1,11 @@
 import {
     openPopup
-} from './index.js';
+} from '../pages/index.js';
 import {
     btnImgPop,
     popImageSub,
     popImage
-} from './utils/constants.js';
+} from '../utils/constants.js';
 export class Cards {
     constructor(card, cardSelector) {
         this._cardSelector = cardSelector;
