@@ -96,7 +96,7 @@ openBtn.addEventListener('click', () => {
   profilePopupEdit.open();
   const currentInfo = userInfo.getUserInfo()
   nameInput.value = currentInfo.name
-  jobInput.value = currentInfo.profession
+  jobInput.value = currentInfo.job
   editProfileValidator.deleteValidationErrors();
 })
 
