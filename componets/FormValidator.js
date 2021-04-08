@@ -37,7 +37,7 @@ class FormValidator {
     deleteValidationErrors() {
         this._inputList.forEach((form) => {
             this._hideInputError(form);
-           
+
         });
         this._toggleBtnState();
     };
@@ -56,7 +56,7 @@ class FormValidator {
     enableValidation() {
         this._formSelector.addEventListener('submit', (evt) => {
             evt.preventDefault();
-           this._toggleBtnState()
+            this._toggleBtnState()
         })
         this._setEventListeners();
     }

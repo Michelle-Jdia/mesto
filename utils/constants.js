@@ -35,7 +35,51 @@ export const initialCards = [{
 }
 ];
 
+//  selectors \\
+export const profileSelectors = {
+    profileName: '.profile__name',
+    profileProfession: '.profile__subtitle'
+  }
+
+export const template = 'template';
+// cards section \\
+export const elementsContainer = document.querySelector('.pictures');
+export const elementsContainerSelectors = '.pictures';
+export const allForms = document.querySelector('.popup__form');
+export const allFormsp = document.querySelector('.popup__form');
+// profile \\
+export const profileName = document.querySelector('.profile__name');
+export const profileJob = document.querySelector('.profile__subtitle');
+export const openBtn = document.querySelector('.profile__button-edit');
+export const openBtnSelector = '.profile__button-edit';
+export const openBtnCreat = document.querySelector('.profile__button-add');
+
+// popup \\
+export const overlay = document.querySelectorAll('.popup');
+
+export const popUpProfile = document.querySelector('.popup_profile');
+export const popUpProfileSelector = '.popup_profile';
+export const popUpCloseBtn = document.querySelector('.popup__close');
+export const popUpForm = document.querySelector('.popup__form');
+export const nameInput = document.querySelector('.popup__input-text_type_name');
+export const jobInput = document.querySelector('.popup__input-text_type_job');
+
+// popup creat \\
+export const popUpCreat = document.querySelector('.popup-creat');
+export const popUpCreatSelector = '.popup-creat';
+export const containerPopCreat = popUpCreat.querySelector('.popup-creat__container');
+export const popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
+export const inputName = document.querySelector('.popup-creat__input-name');
+export const inputLink = document.querySelector('.popup-creat__input-link');
+export const formElAddCard = document.querySelector('.popup-creat__form');
+
+// popup img \\
+export const btnImgPopClose = document.querySelector('.popup-img__close');
+export const btnImgPopCloseSelector = '.popup-img__close';
 
 export const btnImgPop = document.querySelector('.popup-img');
+export const btnImgPopSelector = '.popup-img';
 export const popImage = document.querySelector('.popup-img__image');
+export const popImageSelector = '.popup-img__image';
 export const popImageSub = document.querySelector('.popup-img__subtitle');
+export const popImageSubSelector = '.popup-img__subtitle';

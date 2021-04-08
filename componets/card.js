@@ -1,56 +1,50 @@
-import {
-    openPopup
-} from '../pages/index.js';
-import {
-    btnImgPop,
-    popImageSub,
-    popImage
-} from '../utils/constants.js';
-export class Cards {
-    constructor(card, cardSelector) {
-        this._cardSelector = cardSelector;
-        this._name = card.name;
-        this._link = card.link;
-    }
-    _toggleLikeIcon(event) {
-        event.target.classList.toggle('cards__heart_active');
-    }
-    _deleteItem(event) {
-        event.target.closest('.cards').remove();
-    }
-    _openImg() {
-        popImage.src = this._link;
-        popImage.alt = this._name;
-        popImageSub.textContent = this._name;
-        openPopup(btnImgPop);
-    }
+export default class Cards {
+  constructor(card, cardSelector, {
+    handleCardClick
+  }) {
+    this._name = card.name
+    this._link = card.link
+    this._cardSelector = cardSelector
+    this._handleCardClick = handleCardClick
+  }
+  _getItem() {
+    const cardElement = document
+      .querySelector(this._cardSelector)
+      .content
+      .querySelector('.cards')
+      .cloneNode(true);
 
-    _setEventListeners() {
-        const removeBtn = this._element.querySelector('.cards__bin');
-        removeBtn.addEventListener('click', (event) => {
-            this._deleteItem(event);
-        });
+    return cardElement;
+  }
+  addCard() {
+    this._element = this._getItem();
+    this._imgElement = this._element.querySelector('.cards__image');
+    this._element.querySelector('.cards__title').textContent = this._name;
+    this._imgElement.src = this._link;
+    this._imgElement.alt = this._name;
+    this._handleLike = this._element.querySelector('.cards__heart')
 
-        const likeBtn = this._element.querySelector('.cards__heart');
-        likeBtn.addEventListener('click', (event) => {
-            this._toggleLikeIcon(event);
-        });
+    this._setEventListeners()
+    return this._element
+  }
+  _setEventListeners() {
+    this._element.querySelector('.cards__bin').addEventListener('click', () => {
+      this._deleteItem()
+    })
+    this._handleLike.addEventListener('click', () => {
+      this._toggleLikeButton()
+    })
+    this._imgElement.addEventListener('click', () => {
+      this._handleCardClick(this._name, this._link)
+    })
+  }
 
-        this._element.querySelector('.cards__image').addEventListener('click', (event) => {
-            this._openImg(event);
-        })
-    }
-    _getItem() {
-        const card = document.querySelector(this._cardSelector).content.querySelector('.cards').cloneNode(true);
-        return card
-    }
-    addCard() {
-        this._element = this._getItem();
-        this._element.querySelector('.cards__title').textContent = this._name;
-        const cardLink = this._element.querySelector('.cards__image');
-        cardLink.src = this._link;
-        cardLink.alt = this._link;
-        this._setEventListeners();
-        return this._element;
-    }
+  _deleteItem() {
+    this._element.remove();
+
+  }
+  _toggleLikeButton() {
+    this._handleLike.classList.toggle('cards__heart_active')
+
+  }
 }
