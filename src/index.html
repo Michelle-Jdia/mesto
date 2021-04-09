@@ -5,23 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
-    <link rel="stylesheet" href="./pages/index.css">
-    <!-- <script type="module" src="./js/index.js" defer></script>
-    <script type="module" src="./js/card.js" defer></script>
-    <script src="./js/FormValidator.js" defer></script> -->
 </head>
 
 <body class="body">
     <div class="page">
         <!-- start header -->
         <header class="header page__header">
-            <img src="./images/Vector.svg" alt="логотип" class="header__logo">
+            <img src="<%=require('./images/Vector.svg')%>" alt="логотип" class="header__logo">
         </header>
         <!-- end header -->
         <main class="content">
             <!-- start profile -->
             <section class="profile content__section">
-                <img src="./images/image_profile.jpg" alt="аватар пользователя" class="profile__avatar">
+                <img src="<%=require('./images/image_profile.jpg')%>" alt="аватар пользователя" class="profile__avatar">
                 <div class="profile__container-info">
                     <div class="profile__avatar-info">
                         <h1 class="profile__name">Мишель Ждиа</h1>
@@ -63,14 +59,12 @@
                 <form action="#" method="post" class="popup__form popup__form" name="form" novalidate>
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <label class="popup__label" for="input-profile-name"></label>
-                    <input type="text" class="popup__input-text popup__input-text_type_name popup__input"
-                        value="" name="name" placeholder="Имя" required minlength="2" maxlength="40"
-                        id="input-profile-name">
+                    <input type="text" class="popup__input-text popup__input-text_type_name popup__input" value=""
+                        name="name" placeholder="Имя" required minlength="2" maxlength="40" id="input-profile-name">
                     <span class="popup__input-error" id="input-profile-name-error"></span>
                     <label class="popup__label" for="input-about"></label>
-                    <input type="text" class="popup__input-text popup__input-text_type_job popup__input"
-                        value="" name="job" placeholder="О себе" required minlength="2"
-                        maxlength="200" id="input-about">
+                    <input type="text" class="popup__input-text popup__input-text_type_job popup__input" value=""
+                        name="job" placeholder="О себе" required minlength="2" maxlength="200" id="input-about">
                     <span class="popup__input-error" id="input-about-error"></span>
                     <button class="popup__button" type="submit">Сохранить</button>
                 </form>
@@ -105,9 +99,6 @@
             </div>
         </div>
     </div>
-    <script type="module" src="/pages/index.js"></script>
-    <script type="module" src="./componets/card.js"></script>
-    <script type="module" src="./componets/FormValidator.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,5 @@
+import '../pages/index.css';
+
 import Cards from '../componets/card.js';
 import {
   FormValidator
@@ -9,38 +11,20 @@ import UserInfo from '../componets/userInfo.js';
 import {
   validationConfig,
   profileSelectors,
-  btnImgPop,
   initialCards,
   template,
-  elementsContainer,
   elementsContainerSelectors,
-  profileName,
-  profileJob,
   openBtn,
-  openBtnSelector,
   openBtnCreat,
-  overlay,
   popUpProfile,
   popUpProfileSelector,
-  popUpCloseBtn,
-  popUpForm,
   nameInput,
   jobInput,
   popUpCreat,
   popUpCreatSelector,
-  containerPopCreat,
-  popUpCloseBtnCreat,
-  inputName,
-  inputLink,
-  formElAddCard,
-  btnImgPopClose,
-  btnImgPopCloseSelector,
   btnImgPopSelector,
-  popImage,
   popImageSelector,
-  popImageSub,
   popImageSubSelector,
-  allForms
 } from '../utils/constants.js';
 
 const profilePopupEdit = new PopupWithForm(popUpProfileSelector, (info) => userInfo.setUserInfo(info));
