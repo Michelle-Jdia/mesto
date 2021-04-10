@@ -1,6 +1,6 @@
 import '../pages/index.css';
 
-import Cards from '../componets/card.js';
+import Card from '../componets/card.js';
 import {
   FormValidator
 } from '../componets/FormValidator.js';
@@ -49,7 +49,7 @@ const addCardValidator = new FormValidator(validationConfig, popUpCreat)
 
 
 function createCard(card) {
-  const newCard = new Cards(card, template, {
+  const newCard = new Card(card, template, {
     handleCardClick: (name, link) => {
       popupWithImage.open(name, link)
     }
