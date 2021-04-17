@@ -86,3 +86,10 @@
 @import url('../blocks/popup-avatar/__form/popup-avatar__form.css');
 @import url('../blocks/popup-avatar/__input-text/popup-avatar__input-text.css');
 @import url('../blocks/popup-avatar/__title/popup-avatar__title.css');
+/* end popup-avatar */
+
+/* start popup remove */
+@import url('../blocks/popup-remove/__title/popup-remove__title.css');
+@import url('../blocks/popup-remove/__form/popup-remove__form.css');
+@import url('../blocks/popup-remove/__container/popup-remove__container.css');
+@import url('../blocks/popup-remove/__button/popup-remove__button.css');

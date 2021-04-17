@@ -90,6 +90,8 @@
                 </form>
             </div>
         </div>
+        <!-- end popup-creat -->
+        <!-- start popup avatar -->
         <div class="popup popup-avatar">
             <div class="popup-avatar__container">
                 <button class="popup-avatar__close popup__close" type="button"></button>
@@ -99,11 +101,23 @@
                     <input type="url" class="popup-avatar__input-text popup-avatar__input-link popup__input" value=""
                         name="link" placeholder="Ссылка на картинку" required id="input-link">
                     <span class="popup__input-error" id="input-link-error"></span>
-                    <button class="popup-avatar__button popup__button" type="submit">Создать</button>
+                    <button class="popup-avatar__button popup__button" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
-        <!-- end popup-creat -->
+        <!-- end popup avatar -->
+        <!-- start popup ask delete -->
+        <div class="popup popup-remove">
+            <div class="popup-remove__container">
+                <button class="popup-remove__close popup__close" type="button"></button>
+                <form action="#" method="post" class="popup__form popup-remove__form" name="creat-form" novalidate>
+                    <h2 class="popup-remove__title">Вы уверены?</h2>
+                    <button class="popup-remove__button popup__button" type="submit">Да</button>
+                </form>
+            </div>
+        </div>
+        <!-- end popup ask delete -->
+        <!--  start popup img -->
         <div class="popup popup-img">
             <div class="popup-img__container">
                 <button class="popup-img__close popup__close" type="button"></button>
@@ -111,6 +125,7 @@
                 <p class="popup-img__subtitle"></p>
             </div>
         </div>
+        <!-- end popup img -->
     </div>
 </body>
 
