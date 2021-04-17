@@ -29,6 +29,9 @@
 @import url('../blocks/profile/__button-add/profile__button-add.css');
 @import url('../blocks/profile/__button-edit/profile__button-edit.css');
 @import url('../blocks/profile/__container-info/profile__container-info.css');
+@import url('../blocks/profile/__avatar-container/profile__avatar-container.css');
+@import url('../blocks/profile/__hover-edit/profile__hover-edit.css');
+
 /* end profile */
 
 /* start pictures */
