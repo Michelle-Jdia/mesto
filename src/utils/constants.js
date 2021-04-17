@@ -54,6 +54,7 @@ export const openBtn = document.querySelector('.profile__button-edit');
 export const openBtnSelector = '.profile__button-edit';
 export const openBtnCreat = document.querySelector('.profile__button-add');
 export const openPopupAvatar = document.querySelector('.profile__hover-edit');
+export const imgAvatarSelector = '.profile__avatar';
 
 // popup \\
 export const overlay = document.querySelectorAll('.popup');
@@ -91,7 +92,8 @@ export const popupRemoveForm = document.querySelector('.popup-remove__form');
 export const popupRemoveSubmit = document.querySelector('.popup-remove__button');
 
 //popup avatar
-export const popupAvatar = document.querySelector('.popup-avatar')
+export const popupAvatar = document.querySelector('.popup-avatar');
+export const popupAvatarSelector = '.popup-avatar';
 export const popupAvatarContainer = document.querySelector('.popup-avatar__container');
 export const popupAvatarInput = document.querySelector('.popup-avatar__input-link');
 export const popupAvatarBtnSubmit = document.querySelector('.popup-avatar__button');

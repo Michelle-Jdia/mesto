@@ -25,6 +25,12 @@ import {
   btnImgPopSelector,
   popImageSelector,
   popImageSubSelector,
+  imgAvatarSelector,
+  openPopupAvatar,
+  popupAvatar,
+  popupAvatarSelector,
+  popupAvatarInput,
+  popupAvatarBtnSubmit
 } from '../utils/constants.js';
 
 const profilePopupEdit = new PopupWithForm(popUpProfileSelector, (info) => userInfo.setUserInfo(info));
@@ -75,7 +81,7 @@ openBtnCreat.addEventListener('click', () => {
   addCardValidator.deleteValidationErrors();
 })
 
-const userInfo = new UserInfo(profileSelectors)
+const userInfo = new UserInfo(profileSelectors, popupAvatar)
 openBtn.addEventListener('click', () => {
   profilePopupEdit.open();
   const currentInfo = userInfo.getUserInfo()
