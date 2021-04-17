@@ -78,3 +78,11 @@
 @import url('../blocks/popup-img/__subtitle/popup-img__subtitle.css');
 @import url('../blocks/popup-img/__close/popup-img__close.css');
 /* end popup-img */
+
+/* start popup-avatar */
+@import url('../blocks/popup-avatar/__button/popup-avatar__button.css');
+@import url('../blocks/popup-avatar/__close/popup-avatar__close.css');
+@import url('../blocks/popup-avatar/__container/popup-avatar__container.css');
+@import url('../blocks/popup-avatar/__form/popup-avatar__form.css');
+@import url('../blocks/popup-avatar/__input-text/popup-avatar__input-text.css');
+@import url('../blocks/popup-avatar/__title/popup-avatar__title.css');
