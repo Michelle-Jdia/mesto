@@ -63,6 +63,7 @@ export const popUpProfile = document.querySelector('.popup_profile');
 export const popUpProfileSelector = '.popup_profile';
 export const popUpCloseBtn = document.querySelector('.popup__close');
 export const popUpForm = document.querySelector('.popup__form');
+export const popUpFormSelect = popUpProfile.querySelector('.popup__form');
 export const nameInput = document.querySelector('.popup__input-text_type_name');
 
 // popup creat \\
@@ -72,7 +73,7 @@ export const containerPopCreat = popUpCreat.querySelector('.popup-creat__contain
 export const popUpCloseBtnCreat = document.querySelector('.popup-creat__close');
 export const inputName = document.querySelector('.popup-creat__input-name');
 export const inputLink = document.querySelector('.popup-creat__input-link');
-export const formElAddCard = document.querySelector('.popup-creat__form');
+export const formElAddCard = popUpCreat.querySelector('.popup-creat__form');
 
 // popup img \\
 export const btnImgPopClose = document.querySelector('.popup-img__close');
@@ -86,15 +87,16 @@ export const popImageSub = document.querySelector('.popup-img__subtitle');
 export const popImageSubSelector = '.popup-img__subtitle';
 
 // popup remove 
-export const popupRemove = document.querySelector('.popup-remove');
+export const popupRemoveSelector = '.popup-remove';
 export const popupRemoveCloseBtn = document.querySelector('.popup-remove__close');
 export const popupRemoveForm = document.querySelector('.popup-remove__form');
 export const popupRemoveSubmit = document.querySelector('.popup-remove__button');
 
 //popup avatar
 export const popupAvatar = document.querySelector('.popup-avatar');
-export const popupAvatarform = popupAvatar.querySelector('.popup-avatar');
+export const popupAvatarform = popupAvatar.querySelector('.popup-creat__form');
 export const popupAvatarSelector = '.popup-avatar';
 export const popupAvatarContainer = document.querySelector('.popup-avatar__container');
 export const popupAvatarInput = document.querySelector('.popup-avatar__input-link');
 export const popupAvatarBtnSubmit = document.querySelector('.popup-avatar__button');
+export const profileAvatar = document.querySelector('.profile__avatar');

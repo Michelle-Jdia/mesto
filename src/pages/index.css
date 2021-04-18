@@ -45,6 +45,8 @@
 @import url('../blocks/cards/__heart/cards__heart.css');
 @import url('../blocks/cards/__info/cards__info.css');
 @import url('../blocks/cards/__bin/cards__bin.css');
+@import url('../blocks/cards/__likes-container/cards__likes-container.css');
+@import url('../blocks/cards/__likes/cards__likes.css');
 /* end cards */
 
 /* start footer */

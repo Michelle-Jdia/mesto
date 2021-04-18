@@ -63,7 +63,7 @@
         <div class="popup popup_profile">
             <div class="popup__container">
                 <button class="popup__close" type="button"></button>
-                <form action="#" method="post" class="popup__form popup__form" name="form" novalidate>
+                <form action="#" method="post" class="popup__form popup__form" name="popup" novalidate>
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <label class="popup__label" for="input-profile-name"></label>
                     <input type="text" class="popup__input-text popup__input-text_type_name popup__input" value=""
@@ -71,7 +71,7 @@
                     <span class="popup__input-error" id="input-profile-name-error"></span>
                     <label class="popup__label" for="input-about"></label>
                     <input type="text" class="popup__input-text popup__input-text_type_job popup__input" value=""
-                        name="job" placeholder="О себе" required minlength="2" maxlength="200" id="input-about">
+                    name="profession" placeholder="О себе" required minlength="2" maxlength="200" id="input-about">
                     <span class="popup__input-error" id="input-about-error"></span>
                     <button class="popup__button" type="submit">Сохранить</button>
                 </form>
@@ -83,7 +83,7 @@
         <div class="popup popup-creat">
             <div class="popup-creat__container">
                 <button class="popup-creat__close popup__close" type="button"></button>
-                <form action="#" method="post" class="popup__form popup-creat__form" name="creat-form" novalidate>
+                <form action="#" method="post" class="popup__form popup-creat__form" name="popup" novalidate>
                     <h2 class="popup-creat__title">Новое место</h2>
                     <label class="popup-creat__label" for="input-name"></label>
                     <input type="text" class="popup-creat__input-text popup-creat__input-name popup__input" value=""
@@ -102,11 +102,11 @@
         <div class="popup popup-avatar">
             <div class="popup-avatar__container">
                 <button class="popup-avatar__close popup__close" type="button"></button>
-                <form action="#" method="post" class="popup__form popup-creat__form" name="creat-form" novalidate>
+                <form action="#" method="post" class="popup__form popup-creat__form" name="popup" novalidate>
                     <h2 class="popup-avatar__title">Обновить аватар</h2>
                     <label class="popup-avatar__label" for="input-link"></label>
                     <input type="url" class="popup-avatar__input-text popup-avatar__input-link popup__input" value=""
-                        name="avatar" placeholder="Ссылка на картинку" required id="input-link">
+                        name="link" placeholder="Ссылка на картинку" required id="input-link">
                     <span class="popup__input-error" id="input-link-error"></span>
                     <button class="popup-avatar__button popup__button" type="submit">Сохранить</button>
                 </form>
@@ -117,7 +117,7 @@
         <div class="popup popup-remove">
             <div class="popup-remove__container">
                 <button class="popup-remove__close popup__close" type="button"></button>
-                <form action="#" method="post" class="popup__form popup-remove__form" name="creat-form" novalidate>
+                <form action="#" method="post" class="popup__form popup-remove__form" name="popup" novalidate>
                     <h2 class="popup-remove__title">Вы уверены?</h2>
                     <button class="popup-remove__button popup__button" type="submit">Да</button>
                 </form>
