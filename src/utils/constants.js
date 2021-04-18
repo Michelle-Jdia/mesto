@@ -40,7 +40,7 @@ export const profileSelectors = {
     profileName: '.profile__name',
     profileProfession: '.profile__subtitle'
 }
-
+export const userId = 'c978f897-d705-4f1d-8b98-36c9feaeed93';
 export const template = 'template';
 // cards section \\
 export const elementsContainer = document.querySelector('.pictures');
@@ -54,7 +54,7 @@ export const openBtn = document.querySelector('.profile__button-edit');
 export const openBtnSelector = '.profile__button-edit';
 export const openBtnCreat = document.querySelector('.profile__button-add');
 export const openPopupAvatar = document.querySelector('.profile__hover-edit');
-export const imgAvatarSelector = '.profile__avatar';
+export const imgAvatarSelector = document.querySelector('.profile__avatar');
 
 // popup \\
 export const overlay = document.querySelectorAll('.popup');
@@ -93,6 +93,7 @@ export const popupRemoveSubmit = document.querySelector('.popup-remove__button')
 
 //popup avatar
 export const popupAvatar = document.querySelector('.popup-avatar');
+export const popupAvatarform = popupAvatar.querySelector('.popup-avatar');
 export const popupAvatarSelector = '.popup-avatar';
 export const popupAvatarContainer = document.querySelector('.popup-avatar__container');
 export const popupAvatarInput = document.querySelector('.popup-avatar__input-link');
