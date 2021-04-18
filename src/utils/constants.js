@@ -94,7 +94,7 @@ export const popupRemoveSubmit = document.querySelector('.popup-remove__button')
 
 //popup avatar
 export const popupAvatar = document.querySelector('.popup-avatar');
-export const popupAvatarform = popupAvatar.querySelector('.popup-creat__form');
+export const popupAvatarform = popupAvatar.querySelector('.popup-avatar__form');
 export const popupAvatarSelector = '.popup-avatar';
 export const popupAvatarContainer = document.querySelector('.popup-avatar__container');
 export const popupAvatarInput = document.querySelector('.popup-avatar__input-link');
