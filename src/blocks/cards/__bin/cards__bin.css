@@ -17,4 +17,7 @@
     transition: opacity ease-in-out 0.4s;
     opacity: 0.6;
 }
-/* cards__bin_show */
+.cards__bin_hide {
+
+    display: none;
+}

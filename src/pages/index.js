@@ -12,7 +12,6 @@ import UserInfo from '../componets/UserInfo.js';
 import {
   validationConfig,
   profileSelectors,
-  initialCards,
   template,
   elementsContainerSelectors,
   openBtn,
@@ -41,25 +40,35 @@ import {
 } from '../utils/constants.js';
 const api = new Api({
   address: 'https://mesto.nomoreparties.co/v1/cohort-22',
-  token: 'c978f897-d705-4f1d-8b98-36c9feaeed93',
+  headers: {
+    authorization: 'c978f897-d705-4f1d-8b98-36c9feaeed93',
+    'Content-type': 'application/json'
+  }
 })
 
-api.getUserInfo().then((data => {
-  name.textContent = data.name
-  profession.textContent = data.about;
-  profileAvatar.src = data.avatar;
-}))
+Promise.all([api.getUserInfo(), api.getInitialCards()])
+  .then(([data, item]) => {
+
+    userInfo.setUserInfo(data);
+    cardList.renderItems(item)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 
 const profilePopupEdit = new PopupWithForm(popUpProfileSelector, (info) => {
   profilePopupEdit.renderLoading(true)
-  api.editUserInfo(info.name, info.job)
-    .finally(() => {
+  api.editUserInfo(info.name, info.about)
+    .then(() => {
       userInfo.setUserInfo(info)
+      profilePopupEdit.close()
+    })
+    .finally(() => {
       profilePopupEdit.renderLoading(false)
     })
     .catch((err) => {
       console.log(err);
-    });
+    })
 });
 profilePopupEdit.setEventListeners()
 
@@ -69,8 +78,12 @@ const photoPopupAdd = new PopupWithForm(popUpCreatSelector, (info) => {
     .then(info => {
       const newPhoto = createCard(info)
       cardList.addPhoto(newPhoto)
+      photoPopupAdd.close()
+    })
+    .finally(() => {
       photoPopupAdd.renderLoading(false)
-    }).catch((err) => {
+    })
+    .catch((err) => {
       console.log(err);
     });
 });
@@ -86,9 +99,14 @@ const popUpEditAvatar = new PopupWithForm(popupAvatarSelector, () => {
   profileAvatar.src = popupAvatarInput.value
 
   api.editUserAvatar(popupAvatarInput.value)
+    .then((res) => {
+      userInfo.setUserInfo(res)
+      popUpEditAvatar.close()
+    })
     .finally(() => {
       popUpEditAvatar.renderLoading(false)
-    }).catch((err) => {
+    })
+    .catch((err) => {
       console.log(err);
     });
 
@@ -107,16 +125,12 @@ const addCardValidator = new FormValidator(validationConfig, formElAddCard)
 
 const avatarUpdateValidation = new FormValidator(validationConfig, popupAvatarform)
 
-api.getInitialCards().then((item) => {
-  cardList.renderItems(item)
-})
 
 function createCard(item) {
   const newCard = new Card(item, template, {
     handleCardClick: (name, link) => {
       popupWithImage.open(name, link)
-    },
-    likeCardHandler: () => {
+    }, likeCardHandler: () => {
       const likedCard = newCard.likedCard();
       const resultApi = likedCard ? api.dislikeCard(newCard.getIdCard()) : api.likeCard(newCard.getIdCard());
 
@@ -127,8 +141,8 @@ function createCard(item) {
       }).catch((err) => {
         console.log(err);
       })
-    },
-    deleteCardHandler: () => {
+    }, deleteCardHandler: () => {
+      
       popUpDeleteConfirm.open(newCard)
 
     }
@@ -158,7 +172,7 @@ openBtn.addEventListener('click', () => {
   profilePopupEdit.open();
   const currentInfo = userInfo.getUserInfo()
   nameInput.value = currentInfo.name
-  jobInput.value = currentInfo.profession
+  jobInput.value = currentInfo.about
   editProfileValidator.deleteValidationErrors();
 })
 
@@ -167,8 +181,7 @@ const deleteConfirm = (evt, newCard) => {
   api.removeCard(newCard.getIdCard())
     .then(response => {
       newCard.removeCard()
-    }).finally(() => {
-      popUpDeleteConfirm.close()
+      popupRemoveSelector.close()
     }).catch((err) => {
       console.log(err);
     });

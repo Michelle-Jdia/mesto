@@ -1,18 +1,18 @@
 export default class Card {
-  constructor(card, cardSelector, {
+  constructor(item, cardSelector, {
     handleCardClick,
     likeCardHandler,
     deleteCardHandler
   }, userId, cardId) {
-    this._name = card.name;
-    this._link = card.link;
+    this._name = item.name;
+    this._link = item.link;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
     this._deleteCardHandler = deleteCardHandler;
     this._likeCardHandler = likeCardHandler;
-    this._countLikes = card.likes;
+    this._countLikes = item.likes;
     this._userID = userId;
-    this._ownerID = card.owner._id;
+    this._ownerID = item.owner._id;
     this._cardID = cardId;
 
   }
@@ -37,7 +37,7 @@ export default class Card {
     this._deleteIcon = this._element.querySelector('.cards__bin')
     this._likes = this._element.querySelector('.cards__likes')
     if (this._ownerID !== this._userID) {
-      this._deleteIcon.style.display = 'none'
+      this._deleteIcon.classList.add('cards__bin_hide')
     }
 
     this.renderLikes()
@@ -70,7 +70,7 @@ export default class Card {
 
   renderLikes() {
     this._likes.textContent = this._countLikes.length
-    this.showLikes(this._userID)
+    this._showLikes(this._userID)
   }
 
   getIdCard() {
@@ -82,13 +82,14 @@ export default class Card {
       return like._id === this._userID
     })
   }
-
-  showLikes() {
+  _showLikes() {
     if (this.likedCard(this._userID)) {
-      this._handleLike.classList.toggle('cards__heart_active')
+      this._handleLike.classList.add('cards__heart_active')
+    } else {
+      this._handleLike.classList.remove('cards__heart_active')
     }
-
   }
+
 
   setLikes(list) {
     this._countLikes = list
