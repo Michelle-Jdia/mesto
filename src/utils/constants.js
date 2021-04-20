@@ -41,7 +41,7 @@ export const profileSelectors = {
     profileProfession: '.profile__subtitle',
     profileAvatar: '.profile__avatar'
 }
-export const userId = 'c978f897-d705-4f1d-8b98-36c9feaeed93';
+export const userIdd = 'c978f897-d705-4f1d-8b98-36c9feaeed93';
 export const template = 'template';
 // cards section \\
 export const elementsContainer = document.querySelector('.pictures');

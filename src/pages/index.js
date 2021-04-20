@@ -31,7 +31,7 @@ import {
   popupAvatarSelector,
   popupAvatarInput,
   popupAvatarBtnSubmit,
-  userId,
+  userIdd,
   popupRemoveSelector,
   popUpFormSelect,
   formElAddCard,
@@ -45,12 +45,12 @@ const api = new Api({
     'Content-type': 'application/json'
   }
 })
-
+let userId
 Promise.all([api.getUserInfo(), api.getInitialCards()])
   .then(([data, item]) => {
-
     userInfo.setUserInfo(data);
-    cardList.renderItems(item)
+    userId = data._id;
+    cardList.renderItems(item);
   })
   .catch((err) => {
     console.log(err)
@@ -146,6 +146,7 @@ function createCard(item) {
       popUpDeleteConfirm.open(newCard)
 
     }
+
   }, userId, item._id)
 
 

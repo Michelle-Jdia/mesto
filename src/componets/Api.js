@@ -6,7 +6,6 @@ export default class Api {
 
   getInitialCards() {
     return fetch(`${this._address}/cards`, {
-      method: 'GET',
       headers: this._headers
     }).then(this._checkResponse)
   }
