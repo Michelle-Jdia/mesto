@@ -16,28 +16,21 @@ import {
   elementsContainerSelectors,
   openBtn,
   openBtnCreat,
-  popUpProfile,
-  popUpProfileSelector,
+    popUpProfileSelector,
   nameInput,
   jobInput,
-  popUpCreat,
   popUpCreatSelector,
   btnImgPopSelector,
   popImageSelector,
   popImageSubSelector,
-  imgAvatarSelector,
   openPopupAvatar,
-  popupAvatar,
   popupAvatarSelector,
   popupAvatarInput,
-  popupAvatarBtnSubmit,
-  userIdd,
   popupRemoveSelector,
   popUpFormSelect,
   formElAddCard,
   popupAvatarform,
-  profileAvatar
-} from '../utils/constants.js';
+  } from '../utils/constants.js';
 const api = new Api({
   address: 'https://mesto.nomoreparties.co/v1/cohort-22',
   headers: {
@@ -47,10 +40,10 @@ const api = new Api({
 })
 let userId
 Promise.all([api.getUserInfo(), api.getInitialCards()])
-  .then(([data, item]) => {
-    userInfo.setUserInfo(data);
-    userId = data._id;
-    cardList.renderItems(item);
+  .then(([userData, cards]) => {
+    userInfo.setUserInfo(userData);
+    userId = userData._id;
+    cardList.renderItems(cards);
   })
   .catch((err) => {
     console.log(err)
@@ -62,6 +55,7 @@ const profilePopupEdit = new PopupWithForm(popUpProfileSelector, (info) => {
     .then(() => {
       userInfo.setUserInfo(info)
       profilePopupEdit.close()
+
     })
     .finally(() => {
       profilePopupEdit.renderLoading(false)
@@ -96,7 +90,7 @@ popupWithImage.setEventListeners()
 
 const popUpEditAvatar = new PopupWithForm(popupAvatarSelector, () => {
   popUpEditAvatar.renderLoading(true)
-  profileAvatar.src = popupAvatarInput.value
+  // profileAvatar.src = popupAvatarInput.value
 
   api.editUserAvatar(popupAvatarInput.value)
     .then((res) => {
@@ -136,7 +130,7 @@ function createCard(item) {
 
       resultApi.then(data => {
         newCard.setLikes(data.likes);
-        newCard.renderLikes()
+        // newCard.renderLikes()
 
       }).catch((err) => {
         console.log(err);
@@ -182,7 +176,7 @@ const deleteConfirm = (evt, newCard) => {
   api.removeCard(newCard.getIdCard())
     .then(response => {
       newCard.removeCard()
-      popupRemoveSelector.close()
+      popUpDeleteConfirm.close()
     }).catch((err) => {
       console.log(err);
     });

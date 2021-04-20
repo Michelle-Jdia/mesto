@@ -89,6 +89,7 @@ export const popImageSubSelector = '.popup-img__subtitle';
 
 // popup remove 
 export const popupRemoveSelector = '.popup-remove';
+export const popupRemove = document.querySelector('.popup-remove');
 export const popupRemoveCloseBtn = document.querySelector('.popup-remove__close');
 export const popupRemoveForm = document.querySelector('.popup-remove__form');
 export const popupRemoveSubmit = document.querySelector('.popup-remove__button');

@@ -40,7 +40,7 @@ export default class Card {
       this._deleteIcon.classList.add('cards__bin_hide')
     }
 
-    this.renderLikes()
+    this._renderLikes()
 
     this._setEventListeners()
     return this._element
@@ -68,7 +68,7 @@ export default class Card {
 
   }
 
-  renderLikes() {
+  _renderLikes() {
     this._likes.textContent = this._countLikes.length
     this._showLikes(this._userID)
   }
@@ -93,5 +93,6 @@ export default class Card {
 
   setLikes(list) {
     this._countLikes = list
+    this._renderLikes()
   }
 }
