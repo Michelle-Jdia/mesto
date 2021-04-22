@@ -10,11 +10,12 @@
     background-image: url('../../../images/plus.svg');
     background-repeat: no-repeat;
     background-position: center;
-    object-fit: cover;
+    /* object-fit: cover; */
+    transition: opacity ease-in-out 0.4s;
 }
 
 .profile__button-add:hover {
-    transition: opacity ease-in-out 0.4s;
+
     opacity: 0.6;
 }
 
