@@ -9,18 +9,10 @@
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    display: none;
-    animation: fade_out_show 1s;
+    display: flex;
+    visibility: hidden;
     opacity: 0;
+    transition: .15s linear;
     margin: 0;
     padding: 0;
-}
-@keyframes fade_in_show {
-    0% {
-         opacity: 0;
-    }
-
-    100% {
-         opacity: 1;
-    }
 }

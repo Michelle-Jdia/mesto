@@ -1,14 +1,4 @@
 .popup__opened {
-    display: flex;
-    animation: fade_in_show 1s;
+    visibility: visible;
     opacity: 1;
-}
-@keyframes fade_out_show {
-    0% {
-         opacity: 1;
-    }
-
-    100% {
-         opacity: 0;
-    }
 }
