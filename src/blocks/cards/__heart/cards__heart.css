@@ -1,7 +1,7 @@
 .cards__heart {
     border: none;
     background: url(https://code.s3.yandex.net/web-code/dom/heart.svg) center no-repeat;
-    background-size: 100%;
+    background-size: 90%;
     outline: none;
     width: 1.3rem;
     height: 1.3rem;
