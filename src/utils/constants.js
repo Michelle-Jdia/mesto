@@ -41,24 +41,21 @@ export const profileSelectors = {
     profileProfession: '.profile__subtitle',
     profileAvatar: '.profile__avatar'
 }
-export const userIdd = 'c978f897-d705-4f1d-8b98-36c9feaeed93';
 export const template = 'template';
 // cards section \\
 export const elementsContainer = document.querySelector('.pictures');
 export const elementsContainerSelectors = '.pictures';
-export const allForms = document.querySelector('.popup__form');
-export const allFormsp = document.querySelector('.popup__form');
 // profile \\
-export const profileName = document.querySelector('.profile__name');
-export const profileJob = document.querySelector('.profile__subtitle');
+// export const profileName = document.querySelector('.profile__name');
+// export const profileJob = document.querySelector('.profile__subtitle');
 export const openBtn = document.querySelector('.profile__button-edit');
 export const openBtnSelector = '.profile__button-edit';
 export const openBtnCreat = document.querySelector('.profile__button-add');
 export const openPopupAvatar = document.querySelector('.profile__hover-edit');
-export const imgAvatarSelector = document.querySelector('.profile__avatar');
+// export const imgAvatarSelector = document.querySelector('.profile__avatar');
 
 // popup \\
-export const overlay = document.querySelectorAll('.popup');
+// export const overlay = document.querySelectorAll('.popup');
 export const jobInput = document.querySelector('.popup__input-text_type_job');
 export const popUpProfile = document.querySelector('.popup_profile');
 export const popUpProfileSelector = '.popup_profile';

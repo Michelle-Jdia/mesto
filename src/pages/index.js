@@ -16,7 +16,7 @@ import {
   elementsContainerSelectors,
   openBtn,
   openBtnCreat,
-    popUpProfileSelector,
+  popUpProfileSelector,
   nameInput,
   jobInput,
   popUpCreatSelector,
