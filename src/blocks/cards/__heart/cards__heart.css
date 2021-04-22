@@ -7,10 +7,11 @@
     height: 1.3rem;
     cursor: pointer;
     margin-right: 20px;
+    transition: opacity ease-in-out 0.4s;
 }
 
 .cards__heart:hover {
-    transition: opacity ease-in-out 0.4s;
+
     opacity: 0.6;
 }
 

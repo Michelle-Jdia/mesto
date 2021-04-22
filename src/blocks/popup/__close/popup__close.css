@@ -11,11 +11,11 @@
     background-image: url('../../../images/CloseIcon.svg');
     background-repeat: no-repeat;
     background-position: center;
-    object-fit: cover;
+    transition: opacity ease-in-out 0.4s;
 }
 
 .popup__close:hover {
-    transition: opacity ease-in-out 0.4s;
+
     opacity: 0.8;
 }
 

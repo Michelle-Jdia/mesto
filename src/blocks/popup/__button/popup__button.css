@@ -11,10 +11,11 @@
     margin: 62px 0 0;
     box-sizing: border-box;
     cursor: pointer;
+    transition: opacity ease-in-out 0.4s;
 }
 
 .popup__button:hover {
-    transition: opacity ease-in-out 0.4s;
+
     opacity: 0.8;
 }
 @media all and (max-width: 682px) {

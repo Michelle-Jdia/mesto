@@ -11,10 +11,10 @@
     background-image: url('../../../images/bin.svg');
     background-repeat: no-repeat;
     background-position: center;
-    object-fit: cover;
+    transition: opacity ease-in-out 0.4s;
 }
 .cards__bin:hover {
-    transition: opacity ease-in-out 0.4s;
+
     opacity: 0.6;
 }
 .cards__bin_hide {
