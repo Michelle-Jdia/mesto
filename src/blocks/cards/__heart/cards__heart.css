@@ -1,21 +1,22 @@
 .cards__heart {
-    border: none;
-    background: url(https://code.s3.yandex.net/web-code/dom/heart.svg) center no-repeat;
-    background-size: 90%;
-    outline: none;
-    width: 1.3rem;
-    height: 1.3rem;
-    cursor: pointer;
-    margin-right: 20px;
-    transition: opacity ease-in-out 0.4s;
+  border: none;
+  background: url('../../../images/heart.svg') no-repeat;
+  background-size: auto;
+  outline: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 20px 0 0;
+  transition: opacity ease-in-out 0.4s;
 }
 
 .cards__heart:hover {
-
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 .cards__heart_active {
-    opacity: 1;
-    background: url(https://code.s3.yandex.net/web-code/dom/heart-filled.svg) center no-repeat;
+  opacity: 1;
+  background: url(https://code.s3.yandex.net/web-code/dom/heart-filled.svg)
+    center no-repeat;
 }
