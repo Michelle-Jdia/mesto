@@ -17,4 +17,4 @@
 * Сохранение внесенных изменений при обновлении страницы;
 
 ------
- [Ссылка на гитхаб](https://michelle-jdia.github.io/mesto/index.html)
+ <!-- [Ссылка на гитхаб](https://michelle-jdia.github.io/mesto/index.html) -->
