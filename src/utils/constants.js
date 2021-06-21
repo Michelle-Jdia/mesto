@@ -1,13 +1,11 @@
 export const validationConfig = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input-error',
-    errorClass: 'popup__input-error_visible'
+	formSelector: '.popup__form',
+	inputSelector: '.popup__input',
+	submitButtonSelector: '.popup__button',
+	inactiveButtonClass: 'popup__button_disabled',
+	inputErrorClass: 'popup__input-error',
+	errorClass: 'popup__input-error_visible'
 };
-
-
 
 // export const initialCards = [{
 //         name: 'Эр-Ракка',
@@ -37,25 +35,21 @@ export const validationConfig = {
 
 //  selectors \\
 export const profileSelectors = {
-    profileName: '.profile__name',
-    profileProfession: '.profile__subtitle',
-    profileAvatar: '.profile__avatar'
-}
+	profileName: '.profile__name',
+	profileProfession: '.profile__subtitle',
+	profileAvatar: '.profile__avatar'
+};
 export const template = 'template';
 // cards section \\
 export const elementsContainer = document.querySelector('.pictures');
 export const elementsContainerSelectors = '.pictures';
 // profile \\
-// export const profileName = document.querySelector('.profile__name');
-// export const profileJob = document.querySelector('.profile__subtitle');
 export const openBtn = document.querySelector('.profile__button-edit');
 export const openBtnSelector = '.profile__button-edit';
 export const openBtnCreat = document.querySelector('.profile__button-add');
 export const openPopupAvatar = document.querySelector('.profile__hover-edit');
-// export const imgAvatarSelector = document.querySelector('.profile__avatar');
 
 // popup \\
-// export const overlay = document.querySelectorAll('.popup');
 export const jobInput = document.querySelector('.popup__input-text_type_job');
 export const popUpProfile = document.querySelector('.popup_profile');
 export const popUpProfileSelector = '.popup_profile';
@@ -84,7 +78,7 @@ export const popImageSelector = '.popup-img__image';
 export const popImageSub = document.querySelector('.popup-img__subtitle');
 export const popImageSubSelector = '.popup-img__subtitle';
 
-// popup remove 
+// popup remove
 export const popupRemoveSelector = '.popup-remove';
 export const popupRemove = document.querySelector('.popup-remove');
 export const popupRemoveCloseBtn = document.querySelector('.popup-remove__close');
