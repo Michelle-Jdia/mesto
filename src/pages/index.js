@@ -1,14 +1,14 @@
 import '../pages/index.css';
-import Api from '../componets/Api';
-import Card from '../componets/Сard.js';
-import PopupWithSubmit from '../componets/PopupSubmit.js'
+import Api from '../components/Api';
+import Card from '../components/Сard.js';
+import PopupWithSubmit from '../components/PopupSubmit.js'
 import {
   FormValidator
-} from '../componets/FormValidator.js';
-import PopupWithImage from '../componets/PopUpWithImage.js';
-import PopupWithForm from '../componets/PopUpWithForm.js';
-import Section from '../componets/Section.js';
-import UserInfo from '../componets/UserInfo.js';
+} from '../components/FormValidator.js';
+import PopupWithImage from '../components/PopUpWithImage.js';
+import PopupWithForm from '../components/PopUpWithForm.js';
+import Section from '../components/Section.js';
+import UserInfo from '../components/UserInfo.js';
 import {
   validationConfig,
   profileSelectors,
@@ -130,7 +130,6 @@ function createCard(item) {
 
       resultApi.then(data => {
         newCard.setLikes(data.likes);
-        // newCard.renderLikes()
 
       }).catch((err) => {
         console.log(err);

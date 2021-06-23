@@ -1,20 +1,17 @@
 # Mesto Russia
-## Проект по итогам 9 спринта Яндекс.Практикум.
 ------
-1. *Описание проекта*
-* Страница с профилем включающая в себя карточки с фотографиями.
-* Акцент в работе сделан на интерактивность кнопок и возможность редактирования полей о профиле страницы.
+1. *Description of the project*
+* Profile page that includes cards with photos.
+* The emphasis in the work is made on the interactivity of the buttons and the ability to edit fields about the page profile.
 ------
-2. *Инструкция по использованию проекта*
-* Сайт сделан на основании предоставленного макета [Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1).
-Структура сайта выстроена в файле index.html с использованием разбивки на блоки.
-* Стилизация через CSS, с разбивкой блоков и элементов по структуре БЭМ Nested.
-* Адаптация под различные расширения: 1280px; 1024px; 768px; 320px.
-* Добавление формы с возможностью редактирования информации на странице с помощью функций JavaScript.
-* Интерактивность кнопок в режиме hover и active.
+2. *Instructions for using the project*
+* The site is made on the basis of the presented layout [Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1).
+The site structure is built in the index.html file using block breakdown.
+* Styling via CSS, with a breakdown of blocks and elements according to the BEM Nested structure.
+* Adaptation for various extensions: 1280px; 1024px; 768px; 320px.
+* Adding a form with the ability to edit information on a page using JavaScript functions.
+* Interactivity of buttons in the mode hover и active.
 ------
-3. *Возможная доработка проекта*
-* Сохранение внесенных изменений при обновлении страницы;
 
 ------
- [Ссылка на гитхаб](https://michelle-jdia.github.io/mesto/)
+ [Link to github](https://michelle-jdia.github.io/mesto/)
